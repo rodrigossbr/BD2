@@ -1,0 +1,10 @@
+package br.com.bd2.model;
+
+import java.util.ArrayList;
+
+public class Clube {
+	private int idClube;
+	private String nome;
+	
+	private ArrayList<Jogador> jogadores;
+}
