@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="br.com.bd2.model.Posicao"/>
+<fullyQualifiedTypeName name="br.com.bd2.model.Jogador"/>
+<fullyQualifiedTypeName name="br.com.bd2.model.ClubeJogo"/>
+<fullyQualifiedTypeName name="antlr.collections.List"/>
+<fullyQualifiedTypeName name="br.com.bd2.model.Diretor"/>
+<fullyQualifiedTypeName name="br.com.bd2.model.Tecnico"/>
+<fullyQualifiedTypeName name="br.com.bd2.model.TorcidaOrganizada"/>
+<fullyQualifiedTypeName name="br.com.bd2.model.ClassificacaoGeral"/>
+<fullyQualifiedTypeName name="br.com.bd2.model.Jogo"/>
+<fullyQualifiedTypeName name="br.com.bd2.model.Campeonato"/>
+<fullyQualifiedTypeName name="org.hibernate.cfg.AnnotationConfiguration"/>
+<fullyQualifiedTypeName name="org.hibernate.mapping.Collection"/>
+<fullyQualifiedTypeName name="org.hibernate.Session"/>
+<fullyQualifiedTypeName name="org.hibernate.Criteria"/>
+<fullyQualifiedTypeName name="org.hibernate.HibernateException"/>
+<fullyQualifiedTypeName name="java.util.Collection"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="org.hibernate.Transaction"/>
+<fullyQualifiedTypeName name="java.lang.reflect.ParameterizedType"/>
+<fullyQualifiedTypeName name="javax.persistence.criteria.Predicate"/>
+<fullyQualifiedTypeName name="javax.sql.rowset.Predicate"/>
+<fullyQualifiedTypeName name="java.util.function.Predicate"/>
+</qualifiedTypeNameHistroy>

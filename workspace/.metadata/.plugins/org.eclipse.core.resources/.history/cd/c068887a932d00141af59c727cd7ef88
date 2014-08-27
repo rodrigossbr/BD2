@@ -1,0 +1,23 @@
+package br.com.bd2.repositories.Base;
+import java.util.Collection;
+import java.util.function.Predicate;
+
+/**
+ *
+ * @author Rodrigo
+ * @param <T>
+ */
+public interface IRepository<T> {
+    
+    public Collection<T> Select();
+    
+    public Collection<T> Select(Predicate<T> conditions);
+    
+    public void Insert(T entity);
+    
+    public void Update(T entity);
+    
+    public void Delete(T entity);
+    
+    public void Delete(Predicate<T> conditions);
+}

@@ -1,0 +1,6 @@
+package br.com.bd2.model;
+
+public class Tecnico {
+	private int idTecnico;
+	private String nome;
+}

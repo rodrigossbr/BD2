@@ -1,0 +1,5 @@
+package br.com.bd2.repositories;
+
+public class RepositoryBase {
+
+}

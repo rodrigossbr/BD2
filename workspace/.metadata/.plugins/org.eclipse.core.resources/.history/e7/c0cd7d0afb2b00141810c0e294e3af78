@@ -1,0 +1,7 @@
+package br.com.bd2.model;
+
+public class TecnicoClube {
+	private int IdTecnicoClube;
+	private int idClube;
+	private int idTecnico;
+}

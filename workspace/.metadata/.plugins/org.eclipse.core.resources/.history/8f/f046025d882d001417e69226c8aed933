@@ -1,0 +1,14 @@
+package br.com.bd2.model;
+
+public class ClubeJogo {
+	private int idClubeJogo;
+	private int idClube;
+	private int idJogo;
+	private int gols;
+	private int pontos;
+	private int cartaoAmarelo;
+	private int cartaoVermelho;
+	
+	private Clube clube;
+	private Jogo jogo;
+}

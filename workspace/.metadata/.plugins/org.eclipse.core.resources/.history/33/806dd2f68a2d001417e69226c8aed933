@@ -1,0 +1,11 @@
+package br.com.bd2.model;
+
+public class Jogador {
+	private int idJogador;
+	private int idClube;
+	private String nome;
+	private int idPosicao;
+	
+	private Clube clube;
+	private Posicao posicao;
+}
