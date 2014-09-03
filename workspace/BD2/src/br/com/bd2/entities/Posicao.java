@@ -1,17 +1,34 @@
 package br.com.bd2.entities;
 
+import static javax.persistence.GenerationType.SEQUENCE;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Posicao")
 public class Posicao {
-	private int idPosicao;
+	
+	@Id
+	@GeneratedValue(strategy = SEQUENCE, generator = "seq_posicao")
+	@SequenceGenerator(name="seq_posicao", sequenceName="seq_posicao")
+	private long idPosicao;
+	
+	@Column(name="nome")
 	private String nome;
 	
 	public Posicao() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public int getIdPosicao() {
+	public long getIdPosicao() {
 		return idPosicao;
 	}
-	public void setIdPosicao(int idPosicao) {
+	public void setIdPosicao(long idPosicao) {
 		this.idPosicao = idPosicao;
 	}
 	public String getNome() {

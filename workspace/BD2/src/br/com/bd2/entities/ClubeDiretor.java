@@ -1,33 +1,62 @@
 package br.com.bd2.entities;
 
+import static javax.persistence.GenerationType.SEQUENCE;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="ClubeDiretor")
 public class ClubeDiretor {
-	private int idClubeDiretor;
-	private int idDiretor;
-	private int idClube;
 	
+	@Id
+	@GeneratedValue(strategy = SEQUENCE, generator = "seq_clubeDiretor")
+	@SequenceGenerator(name="seq_clubeDiretor", sequenceName="seq_clubeDiretor")
+	private long idClubeDiretor;
+	
+	@Column(name="idDiretor", nullable=false)
+	@JoinColumn(table="Diretor", name="idDiretor")
+	private long idDiretor;
+	
+	@Column(name="idClube", nullable=false)
+	@JoinColumn(table="Clube", name="idClube")
+	private long idClube;
+	
+	@ManyToOne
+	@JoinTable(name="Diretor")
 	private Diretor diretor;
+	
+	@ManyToOne
+	@JoinTable(name="Clube")
 	private Clube clube;
 	
 	public ClubeDiretor() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public int getIdClubeDiretor() {
+	public long getIdClubeDiretor() {
 		return idClubeDiretor;
 	}
-	public void setIdClubeDiretor(int idClubeDiretor) {
+	public void setIdClubeDiretor(long idClubeDiretor) {
 		this.idClubeDiretor = idClubeDiretor;
 	}
-	public int getIdDiretor() {
+	public long getIdDiretor() {
 		return idDiretor;
 	}
-	public void setIdDiretor(int idDiretor) {
+	public void setIdDiretor(long idDiretor) {
 		this.idDiretor = idDiretor;
 	}
-	public int getIdClube() {
+	public long getIdClube() {
 		return idClube;
 	}
-	public void setIdClube(int idClube) {
+	public void setIdClube(long idClube) {
 		this.idClube = idClube;
 	}
 	public Diretor getDiretor() {

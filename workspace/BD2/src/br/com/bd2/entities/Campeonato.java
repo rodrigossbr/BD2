@@ -1,23 +1,49 @@
 package br.com.bd2.entities;
 
+import static javax.persistence.GenerationType.SEQUENCE;
+
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Campeonato")
 public class Campeonato {
-	private int idCampeonato;
+	
+	@Id
+	@GeneratedValue(strategy = SEQUENCE, generator = "s_campeonato")
+	@SequenceGenerator(name="s_campeonato", sequenceName="s_campeonato")
+	private long idCampeonato;
+	
+	@Column(name="nome", nullable=false, length=50)
 	private String nome;
+	
+	@Column(name="ano", nullable=false)
 	private int ano;
+	
+	@Column(name="nroClubes", nullable=false)
 	private int nroClubes;
+	
+	@OneToMany(mappedBy="Campeonato")
 	private List<ClassificacaoGeral> classificacaoGeral;
+	
+	@OneToMany(mappedBy="Campeonato")
 	private List<Rodada> rodadas;
 	
 	public Campeonato(){
 		
 	}
 	
-	public int getIdCampeonato() {
+	public long getIdCampeonato() {
 		return idCampeonato;
 	}
-	public void setIdCampeonato(int idCampeonato) {
+	public void setIdCampeonato(long idCampeonato) {
 		this.idCampeonato = idCampeonato;
 	}
 	public String getNome() {

@@ -1,29 +1,65 @@
 package br.com.bd2.entities;
 
+import static javax.persistence.GenerationType.SEQUENCE;
+
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Clube")
 public class Clube {
-	private int idClube;
+	
+	@Id
+	@GeneratedValue(strategy = SEQUENCE, generator = "seq_clube")
+	@SequenceGenerator(name="seq_clube", sequenceName="seq_clube")
+	private long idClube;
+	
+	@Column(name="nome", nullable=false, length=50)
 	private String nome;
 	
+	@OneToMany(mappedBy="Jogador")
 	private List<Jogador> jogadores;
+	
+	@OneToMany(mappedBy="Jogo")
 	private List<Jogo> jogos;
+	
+	@OneToMany(mappedBy="Diretor")
 	private List<Diretor> diretores;
+	
+	@OneToMany(mappedBy="Patrocinador")
 	private List<Patrocinador> patrocinadores;
+	
+	@OneToMany(mappedBy="Tecnico")
 	private List<Tecnico> tecnicos;
+	
+	@OneToMany(mappedBy="TorcidaOrganizada")
 	private List<TorcidaOrganizada> torcidaOrganizada;
 		
+	@ManyToOne
+	@JoinColumn(name="ClassificacaoGeral")
 	private ClassificacaoGeral classificacaoGeral;
+	
+	@ManyToOne
+	@JoinColumn(name="ClassificacaoRodada")		
 	private ClassificacaoRodada classificacaoRodada;
 	
 	public Clube() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public int getIdClube() {
+	public long getIdClube() {
 		return idClube;
 	}
-	public void setIdClube(int idClube) {
+	public void setIdClube(long idClube) {
 		this.idClube = idClube;
 	}
 	public String getNome() {

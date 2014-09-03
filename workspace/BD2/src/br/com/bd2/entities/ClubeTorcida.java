@@ -1,34 +1,62 @@
 package br.com.bd2.entities;
 
+import static javax.persistence.GenerationType.SEQUENCE;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="ClubeTorcida")
 public class ClubeTorcida {
 
-	private int idClubeTorcida;
-	private int idClube;
-	private int idTorcidaOrganizada;
+	@Id
+	@GeneratedValue(strategy = SEQUENCE, generator = "s_clubeTorcida")
+	@SequenceGenerator(name="s_clubeTorcida", sequenceName="s_clubeTorcida")
+	private long idClubeTorcida;
 	
+	@Column(name="idClube", nullable=false)
+	@JoinColumn(table="Clube", name="idClube")
+	private long idClube;
+	
+	@Column(name="idTorcidaOrganizada", nullable=false)
+	@JoinColumn(table="TorcidaOrganizada", name="idTorcidaOrganizada")
+	private long idTorcidaOrganizada;
+	
+	@ManyToOne
+	@JoinTable(name="Clube")
 	private Clube clube;
+	
+	@ManyToOne
+	@JoinTable(name="TorcidaOrganizada")
 	private TorcidaOrganizada torcidaOrganizada;
 	
 	public ClubeTorcida() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public int getIdClubeTorcida() {
+	public long getIdClubeTorcida() {
 		return idClubeTorcida;
 	}
-	public void setIdClubeTorcida(int idClubeTorcida) {
+	public void setIdClubeTorcida(long idClubeTorcida) {
 		this.idClubeTorcida = idClubeTorcida;
 	}
-	public int getIdClube() {
+	public long getIdClube() {
 		return idClube;
 	}
-	public void setIdClube(int idClube) {
+	public void setIdClube(long idClube) {
 		this.idClube = idClube;
 	}
-	public int getIdTorcidaOrganizada() {
+	public long getIdTorcidaOrganizada() {
 		return idTorcidaOrganizada;
 	}
-	public void setIdTorcidaOrganizada(int idTorcidaOrganizada) {
+	public void setIdTorcidaOrganizada(long idTorcidaOrganizada) {
 		this.idTorcidaOrganizada = idTorcidaOrganizada;
 	}
 	public Clube getClube() {
