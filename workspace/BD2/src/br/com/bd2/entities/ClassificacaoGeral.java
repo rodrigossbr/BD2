@@ -21,11 +21,9 @@ public class ClassificacaoGeral {
 	private long idClassificacaoGeral;
 	
 	@Column(name="idCampeonato", nullable=false)
-	@JoinColumn(table="Campeonato", name="idCampeonato")
 	private long idCampeonato;
 	
 	@Column(name="idClube", nullable=false)
-	@JoinColumn(table="Clube", name="idClube")
 	private long idClube;
 	
 	@Column(name="nroClubes", nullable=false, length=20)

@@ -22,7 +22,6 @@ public class ClubeJogo {
 	private long idClubeJogo;
 	
 	@Column(name="idClube", nullable=false)
-	@JoinColumn(table="Clube", name="idClube")
 	private long idClube;
 	
 	@Column(name="gols", nullable=true)

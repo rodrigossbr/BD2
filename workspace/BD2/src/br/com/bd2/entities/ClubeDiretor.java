@@ -22,11 +22,9 @@ public class ClubeDiretor {
 	private long idClubeDiretor;
 	
 	@Column(name="idDiretor", nullable=false)
-	@JoinColumn(table="Diretor", name="idDiretor")
 	private long idDiretor;
 	
 	@Column(name="idClube", nullable=false)
-	@JoinColumn(table="Clube", name="idClube")
 	private long idClube;
 	
 	@ManyToOne

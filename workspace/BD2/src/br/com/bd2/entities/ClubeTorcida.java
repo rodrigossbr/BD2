@@ -22,11 +22,9 @@ public class ClubeTorcida {
 	private long idClubeTorcida;
 	
 	@Column(name="idClube", nullable=false)
-	@JoinColumn(table="Clube", name="idClube")
 	private long idClube;
 	
 	@Column(name="idTorcidaOrganizada", nullable=false)
-	@JoinColumn(table="TorcidaOrganizada", name="idTorcidaOrganizada")
 	private long idTorcidaOrganizada;
 	
 	@ManyToOne

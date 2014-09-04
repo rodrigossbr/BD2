@@ -22,19 +22,15 @@ public class Jogo {
 	private long idJogo;
 	
 	@Column(name="idCampeonato")
-	@JoinColumn(table="Campeonato", name="idCampeonato")
 	private long idCampeonato;
 	
 	@Column(name="idRodada")
-	@JoinColumn(table="Rodada", name="idRodada")
 	private long idRodada;
 	
 	@Column(name="idClubeJogo")
-	@JoinColumn(table="ClubeJogo", name="idClubeJogo")
 	private long idClubeJogo1;
 	
 	@Column(name="idClubeJogo")
-	@JoinColumn(table="ClubeJogo", name="idClubeJogo")
 	private long idClubeJogo2;
 	
 	@OneToOne

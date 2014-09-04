@@ -22,11 +22,9 @@ public class TecnicoClube {
 	private long idTecnicoClube;
 	
 	@Column(name="idClube")
-	@JoinColumn(table="Clube", name="idClube")
 	private long idClube;
 	
 	@Column(name="idTecnico")
-	@JoinColumn(table="Tecnico", name="idTecnico")
 	private long idTecnico;
 	
 	@ManyToOne

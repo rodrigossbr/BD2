@@ -22,14 +22,12 @@ public class Jogador {
 	private long idJogador;
 	
 	@Column(name="idClube")
-	@JoinColumn(table="Clube", name="idClube")
 	private long idClube;
 	
 	@Column(name="nome", nullable=false, length=100)
 	private String nome;
 	
 	@Column(name="idPosicao")
-	@JoinColumn(table="Posicao", name="idPosicao")
 	private long idPosicao;
 	
 	@ManyToOne

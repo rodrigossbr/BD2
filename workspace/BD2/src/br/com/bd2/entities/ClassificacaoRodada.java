@@ -21,11 +21,9 @@ public class ClassificacaoRodada {
 	private long idClassificacaoRodada;
 	
 	@Column(name="idRodada", nullable=false)
-	@JoinColumn(table="Rodada", name="idRodada")
 	private long idRodada;
 	
 	@Column(name="idClube", nullable=false)
-	@JoinColumn(table="Clube", name="idClube")
 	private long idClube;
 	
 	@Column(name="posicao", nullable=false, length=50)

@@ -25,11 +25,9 @@ public class Rodada {
 	private long idRodada;
 	
 	@Column(name="idCampeonato")
-	@JoinColumn(table="Campeonato", name="idCampeonato")
 	private long idCampeonato;
 	
 	@Column(name="idArtilheiro")
-	@JoinColumn(table="Artilheiro", name="idArtilheiro")
 	private long idArtilheiro;
 	
 	@ManyToOne
