@@ -41,6 +41,10 @@ public class Jogador {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public Jogador(String nome) {
+		this.nome = nome;
+	}
+	
 	public long getIdJogador() {
 		return idJogador;
 	}

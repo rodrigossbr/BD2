@@ -25,6 +25,10 @@ public class Tecnico {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public Tecnico(String nome) {
+		this.nome = nome;
+	}
+	
 	public long getIdTecnico() {
 		return idTecnico;
 	}

@@ -25,6 +25,10 @@ public class Posicao {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public Posicao(String nome) {
+		this.nome = nome;
+	}
+	
 	public long getIdPosicao() {
 		return idPosicao;
 	}

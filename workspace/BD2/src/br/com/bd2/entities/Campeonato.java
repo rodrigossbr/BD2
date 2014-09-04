@@ -17,8 +17,8 @@ import javax.persistence.Table;
 public class Campeonato {
 	
 	@Id
-	@GeneratedValue(strategy = SEQUENCE, generator = "s_campeonato")
-	@SequenceGenerator(name="s_campeonato", sequenceName="s_campeonato")
+	@GeneratedValue(strategy = SEQUENCE, generator = "seq_campeonato")
+	@SequenceGenerator(name="seq_campeonato", sequenceName="seq_campeonato")
 	private long idCampeonato;
 	
 	@Column(name="nome", nullable=false, length=50)
@@ -38,6 +38,10 @@ public class Campeonato {
 	
 	public Campeonato(){
 		
+	}
+	
+	public Campeonato(String nome){
+		this.nome = nome;
 	}
 	
 	public long getIdCampeonato() {

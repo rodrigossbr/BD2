@@ -56,6 +56,10 @@ public class Clube {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public Clube(String nome) {
+		this.nome = nome;
+	}
+	
 	public long getIdClube() {
 		return idClube;
 	}
@@ -115,5 +119,9 @@ public class Clube {
 	}
 	public void setClassificacaoRodada(ClassificacaoRodada classificacaoRodada) {
 		this.classificacaoRodada = classificacaoRodada;
+	}
+	
+	public void addJogador(Jogador jogador){
+		this.jogadores.add(jogador);
 	}
 }

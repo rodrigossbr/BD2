@@ -25,6 +25,10 @@ public class Patrocinador {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public Patrocinador(String nome) {
+		this.nome = nome;
+	}
+	
 	public long getIdPatrocinador() {
 		return idPatrocinador;
 	}

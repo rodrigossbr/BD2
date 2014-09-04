@@ -25,6 +25,10 @@ public class Diretor {
 		// TODO Auto-generated constructor stub
 	}
 	
+	public Diretor(String nome) {
+		this.nome = nome;
+	}
+	
 	public long getIdDiretor() {
 		return idDiretor;
 	}
