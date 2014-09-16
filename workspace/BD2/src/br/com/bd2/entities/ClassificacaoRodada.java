@@ -16,25 +16,19 @@ import javax.persistence.Table;
 public class ClassificacaoRodada {
 	
 	@Id
-	@GeneratedValue(strategy = SEQUENCE, generator = "s_classificacaoRodada")
-	@SequenceGenerator(name="s_classificacaoRodada", sequenceName="s_classificacaoRodada")
+	@GeneratedValue(strategy = SEQUENCE, generator = "seq_classificacaoRodada")
+	@SequenceGenerator(name="seq_classificacaoRodada", sequenceName="seq_classificacaoRodada")
 	private long idClassificacaoRodada;
 	
-	@Column(name="idRodada", nullable=false)
-	private long idRodada;
-	
-	@Column(name="idClube", nullable=false)
-	private long idClube;
-	
-	@Column(name="posicao", nullable=false, length=50)
-	private String posicao;
+	@Column(name="posicao", nullable=false)
+	private int posicao;
 	
 	@ManyToOne
-	@JoinColumn(name="Rodada")
+	@JoinColumn(name="idRodada")
 	private Rodada rodada;
 	
 	@ManyToOne
-	@JoinColumn(name="Clube")
+	@JoinColumn(name="idClube")
 	private Clube clube;
 	
 	public ClassificacaoRodada() {
@@ -44,36 +38,31 @@ public class ClassificacaoRodada {
 	public long getIdClassificacaoRodada() {
 		return idClassificacaoRodada;
 	}
+	
 	public void setIdClassificacaoRodada(long idClassificacaoRodada) {
 		this.idClassificacaoRodada = idClassificacaoRodada;
 	}
-	public long getIdRodada() {
-		return idRodada;
-	}
-	public void setIdRodada(long idRodada) {
-		this.idRodada = idRodada;
-	}
-	public long getIdClube() {
-		return idClube;
-	}
-	public void setIdClube(long idClube) {
-		this.idClube = idClube;
-	}
-	public String getPosicao() {
+
+	public int getPosicao() {
 		return posicao;
 	}
-	public void setPosicao(String posicao) {
+	
+	public void setPosicao(int posicao) {
 		this.posicao = posicao;
 	}
+	
 	public Rodada getRodada() {
 		return rodada;
 	}
+	
 	public void setRodada(Rodada rodada) {
 		this.rodada = rodada;
 	}
+	
 	public Clube getClube() {
 		return clube;
 	}
+	
 	public void setClube(Clube clube) {
 		this.clube = clube;
 	}

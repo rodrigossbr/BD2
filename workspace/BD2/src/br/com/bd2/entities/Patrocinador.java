@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -21,6 +23,10 @@ public class Patrocinador {
 	@Column(name="nome")
 	private String nome;
 	
+	@ManyToOne
+	@JoinTable(name="Clube")
+	private Clube clube;
+	
 	public Patrocinador() {
 		// TODO Auto-generated constructor stub
 	}
@@ -32,13 +38,24 @@ public class Patrocinador {
 	public long getIdPatrocinador() {
 		return idPatrocinador;
 	}
+	
 	public void setIdPatrocinador(long idPatrocinador) {
 		this.idPatrocinador = idPatrocinador;
 	}
+	
 	public String getNome() {
 		return nome;
 	}
+	
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public Clube getClube() {
+		return clube;
+	}
+
+	public void setClube(Clube clube) {
+		this.clube = clube;
 	}
 }

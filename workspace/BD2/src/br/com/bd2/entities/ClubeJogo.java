@@ -6,7 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -19,9 +19,6 @@ public class ClubeJogo {
 	@GeneratedValue(strategy = SEQUENCE, generator = "seq_clubeJogo")
 	@SequenceGenerator(name="seq_clubeJogo", sequenceName="seq_clubeJogo")
 	private long idClubeJogo;
-	
-	@Column(name="idClube", nullable=false)
-	private long idClube;
 	
 	@Column(name="gols", nullable=true)
 	private int gols;
@@ -36,9 +33,21 @@ public class ClubeJogo {
 	private int cartaoVermelho;
 	
 	@ManyToOne
-	@JoinTable(name="Clube")
+	@JoinColumn(name="idClube")
 	private Clube clube;
 	
+	@ManyToOne
+	@JoinColumn(name="idJogo")
+	private Jogo jogo;
+	
+	public Jogo getJogo() {
+		return jogo;
+	}
+
+	public void setJogo(Jogo jogo) {
+		this.jogo = jogo;
+	}
+
 	public ClubeJogo() {
 		// TODO Auto-generated constructor stub
 	}
@@ -49,14 +58,6 @@ public class ClubeJogo {
 
 	public void setIdClubeJogo(long idClubeJogo) {
 		this.idClubeJogo = idClubeJogo;
-	}
-
-	public long getIdClube() {
-		return idClube;
-	}
-
-	public void setIdClube(long idClube) {
-		this.idClube = idClube;
 	}
 
 	public int getGols() {

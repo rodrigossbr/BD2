@@ -30,10 +30,10 @@ public class Campeonato {
 	@Column(name="nroClubes", nullable=false)
 	private int nroClubes;
 	
-	@OneToMany(mappedBy="Campeonato")
+	@OneToMany(mappedBy="campeonato")
 	private List<ClassificacaoGeral> classificacaoGeral;
 	
-	@OneToMany(mappedBy="Campeonato")
+	@OneToMany(mappedBy="campeonato")
 	private List<Rodada> rodadas;
 	
 	public Campeonato(){

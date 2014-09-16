@@ -6,6 +6,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -21,8 +24,16 @@ public class TorcidaOrganizada {
 	@Column(name="nome")
 	private String nome;
 	
+	@ManyToOne
+	@JoinColumn(name="idClube")
+	private Clube clube;
+	
 	public TorcidaOrganizada() {
 		// TODO Auto-generated constructor stub
+	}
+	
+	public TorcidaOrganizada(String nome) {
+		this.nome = nome;
 	}
 	
 	public long getIdTorcidaOrganizada() {
@@ -36,5 +47,13 @@ public class TorcidaOrganizada {
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public Clube getClube() {
+		return clube;
+	}
+
+	public void setClube(Clube clube) {
+		this.clube = clube;
 	}
 }

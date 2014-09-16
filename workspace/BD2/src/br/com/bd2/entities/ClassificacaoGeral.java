@@ -16,25 +16,19 @@ import javax.persistence.Table;
 public class ClassificacaoGeral {
 	
 	@Id
-	@GeneratedValue(strategy = SEQUENCE, generator = "s_classificacaoGeral")
-	@SequenceGenerator(name="s_classificacaoGeral", sequenceName="s_classificacaoGeral")
+	@GeneratedValue(strategy = SEQUENCE, generator = "seq_classificacaoGeral")
+	@SequenceGenerator(name="seq_classificacaoGeral", sequenceName="seq_classificacaoGeral")
 	private long idClassificacaoGeral;
 	
-	@Column(name="idCampeonato", nullable=false)
-	private long idCampeonato;
-	
-	@Column(name="idClube", nullable=false)
-	private long idClube;
-	
-	@Column(name="nroClubes", nullable=false, length=20)
-	private String posicao;
+	@Column(name="posicao", nullable=false)
+	private int posicao;
 	
 	@ManyToOne
-	@JoinColumn(name="Campeonato")
+	@JoinColumn(name="idCampeonato")
 	private Campeonato campeonato;
 	
 	@ManyToOne
-	@JoinColumn(name="Clube")
+	@JoinColumn(name="idClube")
 	private Clube clube;
 	
 	public ClassificacaoGeral() {
@@ -47,22 +41,11 @@ public class ClassificacaoGeral {
 	public void setIdClassificacaoGeral(long idClassificacaoGeral) {
 		this.idClassificacaoGeral = idClassificacaoGeral;
 	}
-	public long getIdCampeonato() {
-		return idCampeonato;
-	}
-	public void setIdCampeonato(long idCampeonato) {
-		this.idCampeonato = idCampeonato;
-	}
-	public long getIdClube() {
-		return idClube;
-	}
-	public void setIdClube(long idClube) {
-		this.idClube = idClube;
-	}
-	public String getPosicao() {
+	
+	public int getPosicao() {
 		return posicao;
 	}
-	public void setPosicao(String posicao) {
+	public void setPosicao(int posicao) {
 		this.posicao = posicao;
 	}
 	public Campeonato getCampeonato() {
