@@ -1,0 +1,37 @@
+drop table if exists classificacaogeral cascade;
+drop table if exists classificacaorodada cascade;
+drop table if exists clubejogo cascade;
+drop table if exists clubetorcida cascade;
+drop table if exists clubediretor cascade;
+drop table if exists diretor cascade;
+drop table if exists posicao cascade;
+drop table if exists jogo cascade;
+drop table if exists clubepatrocinador cascade;
+drop table if exists patrocinador cascade;
+drop table if exists jogador cascade;
+drop table if exists campeonato cascade;
+drop table if exists rodada cascade;
+drop table if exists tecnicoclube cascade;
+drop table if exists torcidaorganizada cascade;
+drop table if exists tecnico cascade;
+drop table if exists clube cascade;
+drop table if exists clubetecnico cascade;
+
+
+drop sequence seq_campeonato;
+drop sequence seq_classificacaogeral;
+drop sequence seq_classificacaorodada;
+drop sequence seq_clube;
+drop sequence seq_clubediretor;
+drop sequence seq_clubejogo;
+drop sequence seq_clubepatrocinador;
+drop sequence seq_clubetorcida;
+drop sequence seq_diretor;
+drop sequence seq_jogador;
+drop sequence seq_jogo;
+drop sequence seq_patrocinador;
+drop sequence seq_posicao;
+drop sequence seq_rodada;
+drop sequence seq_tecnico;
+drop sequence seq_tecnicoclube;
+drop sequence seq_torcidaorganizada;
