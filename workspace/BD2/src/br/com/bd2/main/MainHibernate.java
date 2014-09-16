@@ -1,17 +1,13 @@
 package br.com.bd2.main;
 
-import java.sql.Array;
 import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
-import jdk.nashorn.internal.runtime.arrays.ArrayLikeIterator;
 import br.com.bd2.entities.*;
 
-public class Main {
+public class MainHibernate {
 
 	public static void main(String[] args) {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("BD2");

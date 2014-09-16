@@ -1,9 +1,11 @@
 package br.com.bd2.main;
 
 import java.util.ArrayList;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+import java.util.List;
+
+import com.db4o.Db4oEmbedded;
+import com.db4o.ObjectContainer;
+import com.db4o.ObjectSet;
 
 import br.com.bd2.entities.*;
 
@@ -99,6 +101,21 @@ public class MainDB4Objects {
 		classificacaoRodada.setRodada(rodada1);
 		campeonato.setRodadas(rodadas);
 		
-		
+		ObjectContainer db = Db4oEmbedded.openFile(Db4oEmbedded.newConfiguration(), "BD2OO");
+		try {
+		    db.store(clube1);
+		    
+		    ObjectSet<?> resultado = db.queryByExample(Clube.class);
+		    imprimirResultado(resultado);
+		} finally {
+		    db.close();
+		}
+	}
+	
+	public static void imprimirResultado(List<?> result){
+	    System.out.println(result.size());
+	    for (Object o : result) {
+	        System.out.println(o);
+	    }
 	}
 }
