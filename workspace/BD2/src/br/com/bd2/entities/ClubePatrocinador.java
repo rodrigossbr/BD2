@@ -1,13 +1,13 @@
 package br.com.bd2.entities;
 
-import static javax.persistence.GenerationType.SEQUENCE;
+import static javax.persistence.GenerationType.IDENTITY;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToOne;
-import javax.persistence.SequenceGenerator;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -15,16 +15,15 @@ import javax.persistence.Table;
 public class ClubePatrocinador {
 	
 	@Id
-	@GeneratedValue(strategy = SEQUENCE, generator = "seq_clubePatrocinador")
-	@SequenceGenerator(name="seq_clubePatrocinador", sequenceName="seq_clubePatrocinador")
+	@GeneratedValue(strategy = IDENTITY)
 	private long idClubePatrocinador;
 	
-	@ManyToOne
-	@JoinTable(name="Clube")
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="idClube")
 	private Clube clube;
 	
-	@ManyToOne
-	@JoinTable(name="Patrocinador")
+	@OneToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="idPatrocinador")
 	private Patrocinador patrocinador;
 	
 	public ClubePatrocinador() {

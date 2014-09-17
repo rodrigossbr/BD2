@@ -2,12 +2,13 @@ package br.com.bd2.entities;
 
 import static javax.persistence.GenerationType.SEQUENCE;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToOne;
+import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -23,9 +24,8 @@ public class Patrocinador {
 	@Column(name="nome")
 	private String nome;
 	
-	@ManyToOne
-	@JoinTable(name="Clube")
-	private Clube clube;
+	@ManyToMany(mappedBy="patrocinadores")
+	private List<Clube> clubes;
 	
 	public Patrocinador() {
 		// TODO Auto-generated constructor stub
@@ -51,11 +51,11 @@ public class Patrocinador {
 		this.nome = nome;
 	}
 
-	public Clube getClube() {
-		return clube;
+	public List<Clube> getClubes() {
+		return clubes;
 	}
 
-	public void setClube(Clube clube) {
-		this.clube = clube;
+	public void setClubes(List<Clube> clubes) {
+		this.clubes = clubes;
 	}
 }

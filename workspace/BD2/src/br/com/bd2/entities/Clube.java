@@ -11,7 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
@@ -52,16 +51,17 @@ public class Clube {
     	inverseJoinColumns={ @JoinColumn(name="idTecnico") })
 	private List<Tecnico> tecnicos;
 	
-	@OneToMany(mappedBy="clube")
+	@ManyToMany
+    @JoinTable(name="ClubeTorcida", 
+    	joinColumns={ @JoinColumn(name="idClube") }, 
+    	inverseJoinColumns={ @JoinColumn(name="idTorcidaOrganizada") })
 	private List<TorcidaOrganizada> torcidaOrganizada;
 		
-	@ManyToOne
-	@JoinColumn(name="idClassificacaoGeral")
-	private ClassificacaoGeral classificacaoGeral;
+	@OneToMany(mappedBy="clube")
+	private List<ClassificacaoGeral> classificacaoGeral;
 	
-	@ManyToOne
-	@JoinColumn(name="idClassificacaoRodada")		
-	private ClassificacaoRodada classificacaoRodada;
+	@OneToMany(mappedBy="clube")		
+	private List<ClassificacaoRodada> classificacaoRodada;
 	
 	public Clube() {
 		// TODO Auto-generated constructor stub
@@ -135,19 +135,19 @@ public class Clube {
 		this.torcidaOrganizada = torcidaOrganizada;
 	}
 	
-	public ClassificacaoGeral getClassificacaoGeral() {
+	public List<ClassificacaoGeral> getClassificacaoGeral() {
 		return classificacaoGeral;
 	}
 	
-	public void setClassificacaoGeral(ClassificacaoGeral classificacaoGeral) {
+	public void setClassificacaoGeral(List<ClassificacaoGeral> classificacaoGeral) {
 		this.classificacaoGeral = classificacaoGeral;
 	}
 	
-	public ClassificacaoRodada getClassificacaoRodada() {
+	public List<ClassificacaoRodada> getClassificacaoRodada() {
 		return classificacaoRodada;
 	}
 	
-	public void setClassificacaoRodada(ClassificacaoRodada classificacaoRodada) {
+	public void setClassificacaoRodada(List<ClassificacaoRodada> classificacaoRodada) {
 		this.classificacaoRodada = classificacaoRodada;
 	}
 	

@@ -27,6 +27,9 @@ public class MainHibernate {
 		
 		Clube clube1 = new Clube("Clube 1");
 		
+		ArrayList<Clube> clubes = new ArrayList<Clube>();
+		clubes.add(clube1);
+		
 		ArrayList<Tecnico> tecnicos = new ArrayList<Tecnico>();
 		Tecnico tecnico1 = new Tecnico("Tecnico 1");
 		tecnicos.add(tecnico1);
@@ -34,13 +37,13 @@ public class MainHibernate {
 		
 		ArrayList<Diretor> diretores = new ArrayList<Diretor>();
 		Diretor diretor1 = new Diretor("Diretor 1");
-		diretor1.setClube(clube1);
+		diretor1.setClubes(clubes);
 		diretores.add(diretor1);
 		clube1.setDiretores(diretores);
 		
 		ArrayList<Patrocinador> patrocinadores = new ArrayList<Patrocinador>();
 		Patrocinador patrocinador1 = new Patrocinador("Patrocinador 1");
-		patrocinador1.setClube(clube1);
+		patrocinador1.setClubes(clubes);
 		patrocinadores.add(patrocinador1);
 		clube1.setPatrocinadores(patrocinadores);
 		
