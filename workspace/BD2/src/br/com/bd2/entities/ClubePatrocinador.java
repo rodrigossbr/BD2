@@ -1,28 +1,31 @@
 package br.com.bd2.entities;
 
-import static javax.persistence.GenerationType.IDENTITY;
+import static javax.persistence.GenerationType.SEQUENCE;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 @Entity
-@Table(name="ClubePatrocinador")
+@Table(name="ClubePatrocinador", uniqueConstraints=@UniqueConstraint(name="AkClubePatrocinador", columnNames={"idClube", "idPatrocinador"}))
 public class ClubePatrocinador {
 	
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
-	private long idClubePatrocinador;
+	@GeneratedValue(strategy = SEQUENCE, generator = "seq_clubePatrocinador")
+	@SequenceGenerator(name="seq_clubePatrocinador", sequenceName="seq_clubePatrocinador")
+	private Long idClubePatrocinador;
 	
-	@OneToOne(cascade=CascadeType.ALL)
+	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="idClube")
 	private Clube clube;
 	
-	@OneToOne(cascade=CascadeType.ALL)
+	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="idPatrocinador")
 	private Patrocinador patrocinador;
 	
