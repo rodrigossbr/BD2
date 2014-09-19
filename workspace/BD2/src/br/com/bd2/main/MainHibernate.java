@@ -111,6 +111,7 @@ public class MainHibernate {
 		classificacaoRodada.setRodada(rodada1);
 		campeonato.setRodadas(rodadas);
 		
+		/*
 		em.getTransaction().begin();
 		em.persist(tecnico1);
 		em.persist(patrocinador1);
@@ -127,6 +128,6 @@ public class MainHibernate {
 		em.persist(rodada1);
 		em.persist(jogo1);
 		em.persist(clube1);
-		em.getTransaction().commit();
+		em.getTransaction().commit(); */
 	}
 }

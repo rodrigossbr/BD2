@@ -1,6 +1,6 @@
 package br.com.bd2.entities;
 
-import static javax.persistence.GenerationType.IDENTITY;
+import static javax.persistence.GenerationType.SEQUENCE;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -8,15 +8,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="ClubeDiretor")
+@Table(name="ClubeDiretor" )
 public class ClubeDiretor {
 	
 	@Id
-	@GeneratedValue(strategy = IDENTITY)
-	private long idClubeDiretor;
+	@GeneratedValue(strategy = SEQUENCE, generator = "seq_clubeDiretor")
+	@SequenceGenerator(name="seq_clubeDiretor", sequenceName="seq_clubeDiretor")
+	private Long idClubeDiretor;
 	
 	@OneToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="idDiretor")
