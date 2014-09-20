@@ -19,7 +19,7 @@ public class Campeonato {
 	@Id
 	@GeneratedValue(strategy = SEQUENCE, generator = "seq_campeonato")
 	@SequenceGenerator(name="seq_campeonato", sequenceName="seq_campeonato")
-	private long idCampeonato;
+	private Long idCampeonato;
 	
 	@Column(name="nome", nullable=false, length=50)
 	private String nome;

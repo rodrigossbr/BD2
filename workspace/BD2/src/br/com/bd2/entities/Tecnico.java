@@ -19,7 +19,7 @@ public class Tecnico {
 	@Id
 	@GeneratedValue(strategy = SEQUENCE, generator = "seq_tecnico")
 	@SequenceGenerator(name="seq_tecnico", sequenceName="seq_tecnico")
-	private long idTecnico;
+	private Long idTecnico;
 	
 	@Column(name="nome")
 	private String nome;

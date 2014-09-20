@@ -19,7 +19,7 @@ public class Diretor {
 	@Id
 	@GeneratedValue(strategy = SEQUENCE, generator = "seq_diretor")
 	@SequenceGenerator(name="seq_diretor", sequenceName="seq_diretor")
-	private long idDiretor;
+	private Long idDiretor;
 	
 	@Column(name="nome", nullable=false, length=100)
 	private String nome;

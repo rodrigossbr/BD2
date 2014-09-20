@@ -18,7 +18,7 @@ public class ClassificacaoRodada {
 	@Id
 	@GeneratedValue(strategy = SEQUENCE, generator = "seq_classificacaoRodada")
 	@SequenceGenerator(name="seq_classificacaoRodada", sequenceName="seq_classificacaoRodada")
-	private long idClassificacaoRodada;
+	private Long idClassificacaoRodada;
 	
 	@Column(name="posicao", nullable=false)
 	private int posicao;

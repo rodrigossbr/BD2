@@ -20,7 +20,7 @@ public class Jogo {
 	@Id
 	@GeneratedValue(strategy = SEQUENCE, generator = "seq_jogo")
 	@SequenceGenerator(name="seq_jogo", sequenceName="seq_jogo")
-	private long idJogo;
+	private Long idJogo;
 	
 	@OneToMany(mappedBy="jogo")
 	private List<ClubeJogo> jogosClube;

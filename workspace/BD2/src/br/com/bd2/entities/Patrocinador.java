@@ -19,7 +19,7 @@ public class Patrocinador {
 	@Id
 	@GeneratedValue(strategy = SEQUENCE, generator = "seq_patrocinador")
 	@SequenceGenerator(name="seq_patrocinador", sequenceName="seq_patrocinador")
-	private long idPatrocinador;
+	private Long idPatrocinador;
 	
 	@Column(name="nome")
 	private String nome;

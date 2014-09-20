@@ -106,9 +106,9 @@ public class MainDB4Objects {
 		
 		ObjectContainer db = Db4oEmbedded.openFile(Db4oEmbedded.newConfiguration(), "BD2OO");
 		try {
-		    db.store(clube1);
+		    db.store(campeonato);
 		    
-		    ObjectSet<?> resultado = db.queryByExample(Clube.class);
+		    ObjectSet<?> resultado = db.queryByExample(Campeonato.class);
 		    imprimirResultado(resultado);
 		} finally {
 		    db.close();

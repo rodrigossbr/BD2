@@ -18,7 +18,7 @@ public class TorcidaOrganizada {
 	@Id
 	@GeneratedValue(strategy = SEQUENCE, generator = "seq_torcidaOrganizada")
 	@SequenceGenerator(name="seq_torcidaOrganizada", sequenceName="seq_torcidaOrganizada")
-	private long idTorcidaOrganizada;
+	private Long idTorcidaOrganizada;
 	
 	@Column(name="nome")
 	private String nome;

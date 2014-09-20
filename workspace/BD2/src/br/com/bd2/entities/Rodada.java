@@ -19,7 +19,7 @@ public class Rodada {
 	@Id
 	@GeneratedValue(strategy = SEQUENCE, generator = "seq_rodada")
 	@SequenceGenerator(name="seq_rodada", sequenceName="seq_rodada")
-	private long idRodada;
+	private Long idRodada;
 	
 	@ManyToOne
 	@JoinColumn(name="idJogador")

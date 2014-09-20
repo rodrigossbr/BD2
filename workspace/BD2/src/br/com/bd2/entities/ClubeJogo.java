@@ -18,7 +18,7 @@ public class ClubeJogo {
 	@Id
 	@GeneratedValue(strategy = SEQUENCE, generator = "seq_clubeJogo")
 	@SequenceGenerator(name="seq_clubeJogo", sequenceName="seq_clubeJogo")
-	private long idClubeJogo;
+	private Long idClubeJogo;
 	
 	@Column(name="gols", nullable=true)
 	private int gols;

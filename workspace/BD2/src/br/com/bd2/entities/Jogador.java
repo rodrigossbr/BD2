@@ -18,7 +18,7 @@ public class Jogador {
 	@Id
 	@GeneratedValue(strategy = SEQUENCE, generator = "seq_jogador")
 	@SequenceGenerator(name="seq_jogador", sequenceName="seq_jogador")
-	private long idJogador;
+	private Long idJogador;
 	
 	@Column(name="nome", nullable=false, length=100)
 	private String nome;

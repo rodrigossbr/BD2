@@ -22,7 +22,7 @@ public class Clube {
 	@Id
 	@GeneratedValue(strategy = SEQUENCE, generator = "seq_clube")
 	@SequenceGenerator(name="seq_clube", sequenceName="seq_clube")
-	private long idClube;
+	private Long idClube;
 	
 	@Column(name="nome", nullable=false, length=50)
 	private String nome;
