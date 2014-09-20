@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://www.campeonato.org" 
+	xmlns:tns="http://www.campeonato.org" 
+	elementFormDefault="qualified">
+
+	<xs:include schemaLocation="Posicao.xsd"/>
+
+    <xs:element name="Jogador" maxOccurs="unbounded">
+   		<xs:complexType>
+        	<xs:sequence>
+            	<xs:element name="id" type="xs:integer"/>
+                <xs:element name="nome" type="xs:string"/>
+                <xs:element name="idPosicao" type="xs:integer"/>
+            </xs:sequence>
+         </xs:complexType>
+     </xs:element>
+     
+     <xs:key name="posicaoKey">
+         <xs:selector xpath="Posicao"/>
+         <xs:field xpath="idPosicao"/>
+     </xs:key>
+
+</schema>

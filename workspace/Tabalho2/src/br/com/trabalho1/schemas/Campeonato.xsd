@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://www.campeonato.org" 
+	xmlns:tns="http://www.campeonato.org" 
+	elementFormDefault="qualified">
+    
+    <xs:include schemaLocation="ClassificacaoGeral.xsd"/>
+    <xs:include schemaLocation="Rodada.xsd"/>
+    
+    <xs:element name="Campeonato" maxOccurs="unbounded">
+    	<xs:complexType>
+        	<xs:sequence>
+            	<xs:element name="id" type="xs:integer"/>
+                <xs:element name="nome" type="xs:string"/>
+                <xs:element name="ano" type="xs:integer"/>
+                <xs:element name="nroClubes" type="xs:integer"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+</schema>
