@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"> 
+
+    <!-- Cadastros de carros -->
+    <xs:element name="CadastroCarros">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- Marcas de Carros -->
+                <xs:element name="marca" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="id" type="xs:integer"/>
+                            <xs:element name="nome" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                
+                <!-- Carros -->
+                <xs:element name="carro" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="id" type="xs:integer"/>
+                            <xs:element name="nome" type="xs:string"/>
+                            <xs:element name="marca" type="xs:integer"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+        
+        <!-- Define para o parser o caminho e o elemento/atributo que deverá ser identificado -->
+        <xs:key name="marcaKey">
+            <xs:selector xpath="marca"/>
+            <xs:field xpath="id"/>
+        </xs:key>
+        
+        <!-- Define para o parser o caminho e o elementro/atributo que fará a verificação com a chave base anterior (key). Conceito de Chave Estrangeira -->
+        <!-- Para validar como atributo (o exemplo está para elementos), deve ser colocado @. Ex.: <xs:field xpath="@marca"/> -->
+        <xs:keyref name="carroKeyRef" refer="marcaKey">
+            <xs:selector xpath="carro"/>
+            <xs:field xpath="marca"/>
+        </xs:keyref>
+    </xs:element>
+</xs:schema>

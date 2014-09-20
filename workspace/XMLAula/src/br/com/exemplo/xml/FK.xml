@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CadastroCarros xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="fk.xsd">
+    <marca>
+        <id>1</id>
+        <nome>Ford</nome>
+    </marca>
+    <marca>
+        <id>2</id>
+        <nome>GM</nome>
+    </marca>
+
+    <!-- Basta trocar no elemento marca, um id que não existe. -->
+    <!-- Observe os dois registros acima. -->
+    <carro>
+        <id>1</id>
+        <nome>Mustang</nome>
+        <marca>2</marca>
+    </carro>
+    <carro>
+        <id>2</id>
+        <nome>Camaro</nome>
+        <marca>2</marca>
+    </carro>
+    <carro>
+        <id>3</id>
+        <nome>BMW X1</nome>
+        <marca>2</marca>
+    </carro>
+</CadastroCarros>
