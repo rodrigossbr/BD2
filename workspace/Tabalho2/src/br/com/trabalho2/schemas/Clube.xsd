@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
 	targetNamespace="http://www.campeonato.org" 
 	xmlns:tns="http://www.campeonato.org" 
 	elementFormDefault="qualified">
 	
 	<xs:include schemaLocation="Jogador.xsd"/>
 	
-    <xs:element name="Clube" maxOccurs="unbounded">
+    <xs:element name="Clube">
     	<xs:complexType>
         	<xs:sequence>
 	            <xs:element name="id" type="xs:integer"/>
 	            <xs:element name="nome" type="xs:string"/>
-	            <xs:element name="jogadores">
+	            <xs:element name="jogadores" maxOccurs="16">
    					<xs:complexType>
 						<xs:sequence>
 							<xs:element ref="Jogador" maxOccurs="unbounded"/>
@@ -21,5 +21,5 @@
             </xs:sequence>
        	</xs:complexType>
      </xs:element>
-
-</schema>
+	
+</xs:schema>

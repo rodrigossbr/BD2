@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
 	targetNamespace="http://www.campeonato.org" 
 	xmlns:tns="http://www.campeonato.org" 
 	elementFormDefault="qualified">
 	
-    <xs:element name="Patrocinador" maxOccurs="unbounded">
+    <xs:element name="TorcidaOrganizada">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="id" type="xs:integer"/>
@@ -13,4 +13,4 @@
         </xs:complexType>
     </xs:element>
 
-</schema>
+</xs:schema>
