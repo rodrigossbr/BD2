@@ -59,7 +59,44 @@
  		</Jogador>
  	</Jogadores>
 	 
-	 
+	<Clubes>
+		<Clube>
+			<id>1</id>
+			<nome>Clube 1</nome>
+			<jogadores>
+				<idJogador>1</idJogador>
+				<idJogador>2</idJogador>
+				<idJogador>3</idJogador>
+			</jogadores>
+			<tecnicos>
+				<idTecnico>1</idTecnico>
+			</tecnicos>
+			<patrocinadores>
+				<idPatrocinador>1</idPatrocinador>
+			</patrocinadores>
+			<torcidasOrganizadas>
+				<idTorcidaOrganizada>1</idTorcidaOrganizada>
+			</torcidasOrganizadas>
+		</Clube>
+		<Clube>
+			<id>2</id>
+			<nome>Clube 2</nome>
+			<jogadores>
+				<idJogador>1</idJogador>
+				<idJogador>2</idJogador>
+				<idJogador>3</idJogador>
+			</jogadores>
+			<tecnicos>
+				<idTecnico>1</idTecnico>
+			</tecnicos>
+			<patrocinadores>
+				<idPatrocinador>1</idPatrocinador>
+			</patrocinadores>
+			<torcidasOrganizadas>
+				<idTorcidaOrganizada>1</idTorcidaOrganizada>
+			</torcidasOrganizadas>
+		</Clube>
+	</Clubes> 
 	 
 	<Campeonatos>
 		<Campeonato>
@@ -67,6 +104,7 @@
 			<nome>Campeonato 1</nome>
 			<ano>2014</ano>
 			<nroClubes>2</nroClubes>
+			
 			<Rodadas>
 				<Rodada>
 					<id>1</id>
@@ -75,6 +113,23 @@
 					<totalAmarelos>2</totalAmarelos>
 					<totalVermelhos>3</totalVermelhos>
 					<totalGols>20</totalGols>
+					<Jogos>
+						<Jogo>
+							<id>1</id>
+							<Clubes>
+								<idClube1>1</idClube1>
+								<idClube2>2</idClube2>
+								<clube1Gols>2</clube1Gols>
+								<clube2Gols>1</clube2Gols>
+								<clube1Pontos>1</clube1Pontos>
+								<clube2Pontos>2</clube2Pontos>
+								<clube1CartaoAmarelo>0</clube1CartaoAmarelo>
+								<clube2CartaoAmarelo>0</clube2CartaoAmarelo>
+								<clube1CartaoVermelho>1</clube1CartaoVermelho>
+								<clube2CartaoVermelho>1</clube2CartaoVermelho>
+							</Clubes>
+						</Jogo>
+					</Jogos>
 				</Rodada>
 			</Rodadas>
 		</Campeonato>

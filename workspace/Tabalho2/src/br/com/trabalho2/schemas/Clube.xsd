@@ -12,10 +12,10 @@
 	            <xs:element name="id" type="xs:integer"/>
 	            <xs:element name="nome" type="xs:string"/>
 	            
-	            <xs:element name="jogadores" maxOccurs="16">
+	            <xs:element name="jogadores" maxOccurs="1">
    					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="idJogador" type="xs:integer"/>
+							<xs:element name="idJogador" type="xs:integer" maxOccurs="16"/>
 						</xs:sequence>        			
 	    			</xs:complexType>
 	    			
@@ -27,14 +27,13 @@
 			        <xs:keyref name="clubeKeyRef" refer="jogadorKey">
 			            <xs:selector xpath="Clube"/>
 			            <xs:field xpath="idJogador"/>
-			        </xs:keyref>        	
-			        
+			        </xs:keyref>   
 	            </xs:element>
 	            
-	             <xs:element name="tecnicos" maxOccurs="unbounded">
+	             <xs:element name="tecnicos">
    					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="idTecnico" type="xs:integer"/>
+							<xs:element name="idTecnico" type="xs:integer" maxOccurs="unbounded"/>
 						</xs:sequence>        			
 	    			</xs:complexType>
 	    			
@@ -47,13 +46,12 @@
 			            <xs:selector xpath="Clube"/>
 			            <xs:field xpath="idTecnico"/>
 			        </xs:keyref>        	
-			        
 	            </xs:element>
 	            
-	            <xs:element name="patrocinadores" maxOccurs="unbounded">
+	            <xs:element name="patrocinadores">
    					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="idPatrocinador" type="xs:integer"/>
+							<xs:element name="idPatrocinador" type="xs:integer" maxOccurs="unbounded"/>
 						</xs:sequence>        			
 	    			</xs:complexType>
 	    			
@@ -66,13 +64,12 @@
 			            <xs:selector xpath="Clube"/>
 			            <xs:field xpath="idPatrocinador"/>
 			        </xs:keyref>        	
-			        
 	            </xs:element>
 	            
-	            <xs:element name="torcidasOrganizadas" maxOccurs="unbounded">
+	            <xs:element name="torcidasOrganizadas">
    					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="idTorcidaOrganizada" type="xs:integer"/>
+							<xs:element name="idTorcidaOrganizada" type="xs:integer" maxOccurs="unbounded"/>
 						</xs:sequence>        			
 	    			</xs:complexType>
 	    			
@@ -85,7 +82,6 @@
 			            <xs:selector xpath="Clube"/>
 			            <xs:field xpath="idTorcidaOrganizada"/>
 			        </xs:keyref>        	
-			        
 	            </xs:element>
             </xs:sequence>
        	</xs:complexType>

@@ -49,6 +49,14 @@
 				    </xs:complexType> 
 				</xs:element>
 				
+				<xs:element name="Clubes" minOccurs="1">
+				    <xs:complexType>
+				        <xs:sequence> 
+				            <xs:element ref="Clube" minOccurs="0" maxOccurs="unbounded"/>
+				        </xs:sequence>
+				    </xs:complexType> 
+				</xs:element>
+				
 				<xs:element name="Campeonatos" minOccurs="0">
 				    <xs:complexType>
 				        <xs:sequence> 

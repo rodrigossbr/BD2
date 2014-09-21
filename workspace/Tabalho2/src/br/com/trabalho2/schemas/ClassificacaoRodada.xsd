@@ -14,7 +14,7 @@
         
 	    <xs:key name="clubeKey">
 	         <xs:selector xpath="Clube"/>
-	         <xs:field xpath="idClube"/>
+	         <xs:field xpath="id"/>
 	    </xs:key>
     
     	<xs:keyref name="classificacaoRodadaKeyRef" refer="clubeKey">
