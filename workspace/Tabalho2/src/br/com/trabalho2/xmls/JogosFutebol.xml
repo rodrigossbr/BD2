@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JogosFutebol xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		 xsi:noNamespaceSchemaLocation="..\..\trabalho2\schemas\JogosFutebol.xsd">
+	 
+ 	<nome>Brasil</nome>
+ 	
+ 	<Tecnicos>
+ 		<Tecnico>
+ 			<id>1</id>
+ 			<nome>Tecnico 1</nome>
+ 		</Tecnico>
+ 		<Tecnico>
+ 			<id>2</id>
+ 			<nome>Tecnico 2</nome>
+		</Tecnico>
+ 	</Tecnicos>
+ 	
+ 	<Patrocinadores>
+ 		<Patrocinador>
+ 			<id>1</id>
+ 			<nome>Patrocinador 1</nome>
+ 		</Patrocinador>
+ 		<Patrocinador>
+ 			<id>2</id>
+ 			<nome>Patrocinador 2</nome>
+ 		</Patrocinador>
+ 	</Patrocinadores>
+ 	 
+ 	<TorcidasOrganizadas>
+ 		<TorcidaOrganizada>
+ 			<id>1</id>
+ 			<nome>Torcida 1</nome>
+ 		</TorcidaOrganizada>
+ 		<TorcidaOrganizada>
+ 			<id>2</id>
+ 			<nome>Torcida 2</nome>
+ 		</TorcidaOrganizada>
+ 	</TorcidasOrganizadas>
+ 	
+ 	<PosicoesJogadores>
+ 		<Posicao>
+ 			<id>1</id>
+ 			<nome>Posicao 1</nome>
+ 		</Posicao>
+ 		<Posicao>
+ 			<id>2</id>
+ 			<nome>Posicao 2</nome>
+ 		</Posicao>
+ 	</PosicoesJogadores>
+ 	
+ 	<Jogadores>
+ 		<Jogador>
+ 			<id>1</id>
+ 			<nome>Jogador 1</nome>
+ 			<posicoes>
+ 				<idPosicao>1</idPosicao>
+ 			</posicoes>
+ 		</Jogador>
+ 	</Jogadores>
+	 
+	 
+	 
+	<Campeonatos>
+		<Campeonato>
+			<id>1</id>
+			<nome>Campeonato 1</nome>
+			<ano>2014</ano>
+			<nroClubes>2</nroClubes>
+			<Rodadas>
+				<Rodada>
+					<id>1</id>
+					<idJogadorArtilheiro>1</idJogadorArtilheiro>
+					<totalJogos>2</totalJogos>
+					<totalAmarelos>2</totalAmarelos>
+					<totalVermelhos>3</totalVermelhos>
+					<totalGols>20</totalGols>
+				</Rodada>
+			</Rodadas>
+		</Campeonato>
+	</Campeonatos> 
+	 
+</JogosFutebol>

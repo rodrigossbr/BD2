@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
     
-    <xs:include schemaLocation="Campeonato.xsd"/>
     <xs:include schemaLocation="Jogador.xsd"/>
     
-   	<xs:element name="Jogo">
+   	<xs:element name="Rodada">
    		<xs:complexType>
              <xs:sequence>
                  <xs:element name="id" type="xs:integer"/>
-                 <xs:element name="idCampeonato" type="xs:integer"/>
                  <xs:element name="idJogadorArtilheiro" type="xs:integer"/>
                  <xs:element name="totalJogos" type="xs:integer"/>
                  <xs:element name="totalAmarelos" type="xs:integer"/>
@@ -16,16 +14,16 @@
                  <xs:element name="totalGols" type="xs:integer"/>
              </xs:sequence>
         </xs:complexType>
-        
-        <xs:key name="campeonatoKey">
-   			<xs:selector xpath="Campeonato"/>
-       		<xs:field xpath="idCampeonato"/>
-    	</xs:key>
-
+       
 		<xs:key name="artilheiroKey">
 	    	<xs:selector xpath="Jogador"/>
 	        <xs:field xpath="idJogadorArtilheiro"/>
 	    </xs:key>
+	    
+	    <xs:keyref name="carroKeyRef" refer="artilheiroKey">
+            <xs:selector xpath="Rodada"/>
+            <xs:field xpath="idJogadorArtilheiro"/>
+        </xs:keyref>
 	    
    	</xs:element>
 </xs:schema>

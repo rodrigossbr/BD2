@@ -1,27 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
     
-    <xs:include schemaLocation="Campeonato.xsd"/>
-	<xs:include schemaLocation="Rodada.xsd"/>
+	<xs:include schemaLocation="Clube.xsd"/>
     
    	<xs:element name="Jogo">
        <xs:complexType>
             <xs:sequence>
                 <xs:element name="id" type="xs:integer"/>
-                <xs:element name="idCampeonato" type="xs:integer"/>
-                <xs:element name="idRodada" type="xs:integer"/>
+                <xs:element name="Clubes" maxOccurs="2">
+                	<xs:complexType>
+                		<xs:sequence>
+                			<xs:element ref="Clube"/>
+                		</xs:sequence>
+                	</xs:complexType>
+                </xs:element>
             </xs:sequence>
         </xs:complexType>
-         
-        <xs:key name="campeonatoKey">
-	         <xs:selector xpath="Campeonato"/>
-	         <xs:field xpath="idCampeonato"/>
-	    </xs:key>
-	    
-	    <xs:key name="rodadaKey">
-	         <xs:selector xpath="Rodada"/>
-	         <xs:field xpath="idRodada"/>
-	    </xs:key>
-	    
    	</xs:element>
 </xs:schema>

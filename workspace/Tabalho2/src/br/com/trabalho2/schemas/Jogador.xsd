@@ -8,14 +8,26 @@
         	<xs:sequence>
             	<xs:element name="id" type="xs:integer"/>
                 <xs:element name="nome" type="xs:string"/>
-                <xs:element name="idPosicao" type="xs:integer"/>
+                
+				<xs:element name="posicoes" maxOccurs="unbounded">
+   					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="idPosicao" type="xs:integer"/>
+						</xs:sequence>        			
+	    			</xs:complexType>
+	    			
+	    			<xs:key name="posicaoKey">
+			            <xs:selector xpath="Posicao"/>
+			            <xs:field xpath="id"/>
+			        </xs:key>
+			        
+			        <xs:keyref name="posicaoKeyRef" refer="posicaoKey">
+			            <xs:selector xpath="Jogador"/>
+			            <xs:field xpath="idPosicao"/>
+			        </xs:keyref>        	
+	            </xs:element>
+	            
             </xs:sequence>
          </xs:complexType>
-         
-         <xs:key name="posicaoKey">
-	         <xs:selector xpath="Posicao"/>
-	         <xs:field xpath="idPosicao"/>
-	     </xs:key>
-     
      </xs:element>
 </xs:schema>
