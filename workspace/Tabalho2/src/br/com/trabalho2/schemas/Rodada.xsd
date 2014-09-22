@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    
     <xs:include schemaLocation="ClassificacaoRodada.xsd"/>
     <xs:include schemaLocation="Jogo.xsd"/>
-    
    	<xs:element name="Rodada">
    		<xs:complexType>
              <xs:sequence>
@@ -13,7 +11,6 @@
                 <xs:element name="totalAmarelos" type="xs:integer"/>
                 <xs:element name="totalVermelhos" type="xs:integer"/>
                 <xs:element name="totalGols" type="xs:integer"/>
-                 
                 <xs:element name="Jogos" minOccurs="0">
 				    <xs:complexType>
 				        <xs:sequence> 
@@ -21,27 +18,18 @@
 				        </xs:sequence>
 				    </xs:complexType> 
 				</xs:element>
-				
 				<xs:element name="ClassificacoesRodada" minOccurs="0">
 				    <xs:complexType>
 				        <xs:sequence> 
-				            <xs:element ref="ClassificacaoRodada" minOccurs="0" maxOccurs="unbounded"/>
+				            <xs:element ref="ClassificacaoRodada" minOccurs="1" maxOccurs="unbounded"/>
 				        </xs:sequence>
 				    </xs:complexType> 
 				</xs:element>
-                 
              </xs:sequence>
         </xs:complexType>
-       
-		<xs:key name="artilheiroKey">
-	    	<xs:selector xpath="Jogador"/>
-	        <xs:field xpath="idJogadorArtilheiro"/>
+       	<xs:key name="rodadaKey">
+	    	<xs:selector xpath="Rodata"/>
+	        <xs:field xpath="id"/>
 	    </xs:key>
-	    
-	    <xs:keyref name="rodadaKeyRef" refer="artilheiroKey">
-            <xs:selector xpath="Rodada"/>
-            <xs:field xpath="idJogadorArtilheiro"/>
-        </xs:keyref>
-	    
    	</xs:element>
 </xs:schema>

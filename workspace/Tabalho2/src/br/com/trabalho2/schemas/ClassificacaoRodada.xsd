@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    
     <xs:include schemaLocation="Clube.xsd"/>
-    
    	<xs:element name="ClassificacaoRodada">
     	<xs:complexType>
         	<xs:sequence>
@@ -11,16 +9,9 @@
 	            <xs:element name="posicao" type="xs:integer"/>
             </xs:sequence>
         </xs:complexType>
-        
-	    <xs:key name="clubeKey">
-	         <xs:selector xpath="Clube"/>
+        <xs:key name="classificacaoRodadaKey">
+	         <xs:selector xpath="ClassificacaoRodada"/>
 	         <xs:field xpath="id"/>
 	    </xs:key>
-    
-    	<xs:keyref name="classificacaoRodadaKeyRef" refer="clubeKey">
-            <xs:selector xpath="ClassificacaoRodada"/>
-            <xs:field xpath="idClube"/>
-        </xs:keyref>
-    
     </xs:element>
 </xs:schema>

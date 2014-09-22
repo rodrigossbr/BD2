@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-	
     <xs:element name="TorcidaOrganizada">
         <xs:complexType>
             <xs:sequence>
@@ -8,6 +7,9 @@
                 <xs:element name="nome" type="xs:string"/>
             </xs:sequence>
         </xs:complexType>
+        <xs:key name="torcidaOrganizadaKey">
+            <xs:selector xpath="TorcidaOrganizada"/>
+            <xs:field xpath="id"/>
+        </xs:key>
     </xs:element>
-
 </xs:schema>

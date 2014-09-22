@@ -9,61 +9,14 @@
             	
             	<xs:element name="nome" type="xs:string"/>
             	
-            	<xs:element name="Tecnicos" minOccurs="0">
-				    <xs:complexType>
-				        <xs:sequence> 
-				            <xs:element ref="Tecnico" minOccurs="0" maxOccurs="unbounded"/>
-				        </xs:sequence>
-				    </xs:complexType> 
-				</xs:element>
-				
-				<xs:element name="Patrocinadores" minOccurs="0">
-				    <xs:complexType>
-				        <xs:sequence> 
-				            <xs:element ref="Patrocinador" minOccurs="0" maxOccurs="unbounded"/>
-				        </xs:sequence>
-				    </xs:complexType> 
-				</xs:element>      
-				
-				<xs:element name="TorcidasOrganizadas" minOccurs="0">
-				    <xs:complexType>
-				        <xs:sequence> 
-				            <xs:element ref="TorcidaOrganizada" minOccurs="0" maxOccurs="unbounded"/>
-				        </xs:sequence>
-				    </xs:complexType> 
-				</xs:element>     
-				
-              	<xs:element name="PosicoesJogadores" minOccurs="0">
-				    <xs:complexType>
-				        <xs:sequence> 
-				            <xs:element ref="Posicao" minOccurs="0" maxOccurs="unbounded"/>
-				        </xs:sequence>
-				    </xs:complexType> 
-				</xs:element>     
-				
-				<xs:element name="Jogadores" minOccurs="1">
-				    <xs:complexType>
-				        <xs:sequence> 
-				            <xs:element ref="Jogador" minOccurs="0" maxOccurs="unbounded"/>
-				        </xs:sequence>
-				    </xs:complexType> 
-				</xs:element>
-				
-				<xs:element name="Clubes" minOccurs="1">
-				    <xs:complexType>
-				        <xs:sequence> 
-				            <xs:element ref="Clube" minOccurs="0" maxOccurs="unbounded"/>
-				        </xs:sequence>
-				    </xs:complexType> 
-				</xs:element>
-				
-				<xs:element name="Campeonatos" minOccurs="0">
-				    <xs:complexType>
-				        <xs:sequence> 
-				            <xs:element ref="Campeonato" minOccurs="0" maxOccurs="unbounded"/>
-				        </xs:sequence>
-				    </xs:complexType> 
-				</xs:element>     
+            	<xs:element ref="Diretor" minOccurs="0" maxOccurs="unbounded"/>
+            	<xs:element ref="Tecnico" minOccurs="0" maxOccurs="unbounded"/>
+    	        <xs:element ref="Patrocinador" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="TorcidaOrganizada" minOccurs="0" maxOccurs="unbounded"/>
+	            <xs:element ref="Posicao" minOccurs="0" maxOccurs="unbounded"/>
+	            <xs:element ref="Jogador" minOccurs="0" maxOccurs="unbounded"/>
+	            <xs:element ref="Clube" minOccurs="0" maxOccurs="unbounded"/>
+	            <xs:element ref="Campeonato" minOccurs="0" maxOccurs="unbounded"/>
 				
             </xs:sequence>
         </xs:complexType>

@@ -1,54 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-    
 	<xs:include schemaLocation="Clube.xsd"/>
-    
    	<xs:element name="Jogo">
        <xs:complexType>
             <xs:sequence>
                 <xs:element name="id" type="xs:integer"/>
-                
                 <xs:element name="Clubes" maxOccurs="1">
    					<xs:complexType>
 						<xs:sequence>
 							<xs:element name="idClube1" type="xs:integer" maxOccurs="1"/>
-							<xs:element name="idClube2" type="xs:integer" maxOccurs="1"/>
-							
+							<xs:element name="idClube2" type="xs:integer" maxOccurs="1"/>							
 							<xs:element name="clube1Gols" type="xs:integer" maxOccurs="1"/>
-							<xs:element name="clube2Gols" type="xs:integer" maxOccurs="1"/>
-							
+							<xs:element name="clube2Gols" type="xs:integer" maxOccurs="1"/>							
 							<xs:element name="clube1Pontos" type="xs:integer" maxOccurs="1"/>
-							<xs:element name="clube2Pontos" type="xs:integer" maxOccurs="1"/>
-							
+							<xs:element name="clube2Pontos" type="xs:integer" maxOccurs="1"/>							
 							<xs:element name="clube1CartaoAmarelo" type="xs:integer" maxOccurs="1"/>
 							<xs:element name="clube2CartaoAmarelo" type="xs:integer" maxOccurs="1"/>
-							
 							<xs:element name="clube1CartaoVermelho" type="xs:integer" maxOccurs="1"/>
 							<xs:element name="clube2CartaoVermelho" type="xs:integer" maxOccurs="1"/>
 						</xs:sequence>        			
 	    			</xs:complexType>
-	    			
-	    			<xs:key name="clube1Key">
-			            <xs:selector xpath="Clube"/>
-			            <xs:field xpath="id"/>
-			        </xs:key>
-			        
-			        <xs:keyref name="jogoClube1KeyRef" refer="clube1Key">
-			            <xs:selector xpath="Jogo"/>
-			            <xs:field xpath="idClube1"/>
-			        </xs:keyref>   
-			        
-			        <xs:key name="clube2Key">
-			            <xs:selector xpath="Clube"/>
-			            <xs:field xpath="id"/>
-			        </xs:key>
-			        
-			        <xs:keyref name="jogoClube2KeyRef" refer="clube2Key">
-			            <xs:selector xpath="Jogo"/>
-			            <xs:field xpath="idClube2"/>
-			        </xs:keyref>   
 	            </xs:element>
             </xs:sequence>
         </xs:complexType>
+        <xs:key name="jogoKey">
+	         <xs:selector xpath="Jogador"/>
+	         <xs:field xpath="id"/>
+	    </xs:key>
    	</xs:element>
 </xs:schema>

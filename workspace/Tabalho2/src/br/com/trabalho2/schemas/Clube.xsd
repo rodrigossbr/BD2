@@ -1,89 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
-	
 	<xs:include schemaLocation="Jogador.xsd"/>
+	<xs:include schemaLocation="Diretor.xsd"/>
 	<xs:include schemaLocation="Tecnico.xsd"/>
 	<xs:include schemaLocation="Patrocinador.xsd"/>
 	<xs:include schemaLocation="TorcidaOrganizada.xsd"/>
-	
     <xs:element name="Clube">
     	<xs:complexType>
         	<xs:sequence>
 	            <xs:element name="id" type="xs:integer"/>
 	            <xs:element name="nome" type="xs:string"/>
-	            
 	            <xs:element name="jogadores" maxOccurs="1">
    					<xs:complexType>
 						<xs:sequence>
 							<xs:element name="idJogador" type="xs:integer" maxOccurs="16"/>
 						</xs:sequence>        			
 	    			</xs:complexType>
-	    			
-	    			<xs:key name="jogadorKey">
-			            <xs:selector xpath="Jogador"/>
-			            <xs:field xpath="id"/>
-			        </xs:key>
-			        
-			        <xs:keyref name="clubeKeyRef" refer="jogadorKey">
-			            <xs:selector xpath="Clube"/>
-			            <xs:field xpath="idJogador"/>
-			        </xs:keyref>   
 	            </xs:element>
-	            
-	             <xs:element name="tecnicos">
+	            <xs:element name="diretores">
+   					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="idDiretor" type="xs:integer" maxOccurs="unbounded"/>
+						</xs:sequence>        			
+	    			</xs:complexType>
+	            </xs:element>
+             	<xs:element name="tecnicos">
    					<xs:complexType>
 						<xs:sequence>
 							<xs:element name="idTecnico" type="xs:integer" maxOccurs="unbounded"/>
 						</xs:sequence>        			
 	    			</xs:complexType>
-	    			
-	    			<xs:key name="tecnicoKey">
-			            <xs:selector xpath="Tecnico"/>
-			            <xs:field xpath="id"/>
-			        </xs:key>
-			        
-			        <xs:keyref name="clubeTecnicoKeyRef" refer="tecnicoKey">
-			            <xs:selector xpath="Clube"/>
-			            <xs:field xpath="idTecnico"/>
-			        </xs:keyref>        	
 	            </xs:element>
-	            
 	            <xs:element name="patrocinadores">
    					<xs:complexType>
 						<xs:sequence>
 							<xs:element name="idPatrocinador" type="xs:integer" maxOccurs="unbounded"/>
 						</xs:sequence>        			
 	    			</xs:complexType>
-	    			
-	    			<xs:key name="patrocinadorKey">
-			            <xs:selector xpath="Patrocinador"/>
-			            <xs:field xpath="id"/>
-			        </xs:key>
-			        
-			        <xs:keyref name="clubePatrocinadorKeyRef" refer="patrocinadorKey">
-			            <xs:selector xpath="Clube"/>
-			            <xs:field xpath="idPatrocinador"/>
-			        </xs:keyref>        	
 	            </xs:element>
-	            
 	            <xs:element name="torcidasOrganizadas">
    					<xs:complexType>
 						<xs:sequence>
 							<xs:element name="idTorcidaOrganizada" type="xs:integer" maxOccurs="unbounded"/>
 						</xs:sequence>        			
 	    			</xs:complexType>
-	    			
-	    			<xs:key name="torcidaOrganizadaKey">
-			            <xs:selector xpath="TorcidaOrganizada"/>
-			            <xs:field xpath="id"/>
-			        </xs:key>
-			        
-			        <xs:keyref name="clubeTorcidaOrganizadaKeyRef" refer="torcidaOrganizadaKey">
-			            <xs:selector xpath="Clube"/>
-			            <xs:field xpath="idTorcidaOrganizada"/>
-			        </xs:keyref>        	
 	            </xs:element>
             </xs:sequence>
        	</xs:complexType>
+       	<xs:key name="clubeKey">
+	         <xs:selector xpath="Clube"/>
+	         <xs:field xpath="id"/>
+	    </xs:key>
      </xs:element>
 </xs:schema>

@@ -11,16 +11,9 @@
                 <xs:element name="posicao" type="xs:integer"/>
             </xs:sequence>
         </xs:complexType>
-	    
-	    <xs:key name="clubeKey">
-	         <xs:selector xpath="Clube"/>
-	         <xs:field xpath="idClube"/>
+		<xs:key name="classificacaoGeralKey">
+	         <xs:selector xpath="ClassificacaoGeral"/>
+	         <xs:field xpath="id"/>
 	    </xs:key>
-		
-		<xs:keyref name="classificacaoGeralKeyRef" refer="clubeKey">
-            <xs:selector xpath="ClassificacaoGeral"/>
-            <xs:field xpath="idClube"/>
-        </xs:keyref>
-        	    
     </xs:element>
 </xs:schema>
