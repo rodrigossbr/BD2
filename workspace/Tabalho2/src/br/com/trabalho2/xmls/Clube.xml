@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<Clube xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:noNamespaceSchemaLocation="..\..\trabalho2\schemas\Clube.xsd">
+  
+  <id>1</id>
+  <nome>Nome do Clube 1</nome>
+  <jogadores>
+    <idJogador>1</idJogador>
+    <idJogador>2</idJogador>
+    <idJogador>3</idJogador>
+    <idJogador>4</idJogador>
+    <idJogador>5</idJogador>
+    <idJogador>6</idJogador>
+    <idJogador>7</idJogador>
+    <idJogador>8</idJogador>
+    <idJogador>9</idJogador>
+    <idJogador>10</idJogador>
+    <idJogador>11</idJogador>
+    <idJogador>12</idJogador>
+    <idJogador>13</idJogador>
+    <idJogador>14</idJogador>
+    <idJogador>15</idJogador>
+    <idJogador>16</idJogador>
+  </jogadores>
+  <diretores>
+    <idDiretor>1</idDiretor>
+  </diretores>
+  <tecnicos>
+    <idTecnico>1</idTecnico>
+  </tecnicos>
+  <patrocinadores>
+    <idPatrocinador>1</idPatrocinador>
+    <idPatrocinador>2</idPatrocinador>
+  </patrocinadores>
+  <torcidasOrganizadas>
+    <idTorcidaOrganizada>1</idTorcidaOrganizada>
+  </torcidasOrganizadas>
+  
+</Clube>
