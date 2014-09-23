@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<Campeonato xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:noNamespaceSchemaLocation="..\..\trabalho2\schemas\Campeonato.xsd">
+
+  <id>1</id>
+  <nome>Campeonato Brasileiro</nome>
+  <ano>2014</ano>
+  <nroClubes>20</nroClubes>
+  <ClassificacoesGerais>
+    <ClassificacaoGeral>
+      <id>1</id>
+      <idClube>1</idClube>
+      <posicao>1</posicao>
+    </ClassificacaoGeral>
+    <ClassificacaoGeral>
+      <id>2</id>
+      <idClube>2</idClube>
+      <posicao>5</posicao>
+    </ClassificacaoGeral>
+    <ClassificacaoGeral>
+      <id>3</id>
+      <idClube>3</idClube>
+      <posicao>10</posicao>
+    </ClassificacaoGeral>
+    <ClassificacaoGeral>
+      <id>4</id>
+      <idClube>4</idClube>
+      <posicao>2</posicao>
+    </ClassificacaoGeral>
+  </ClassificacoesGerais>
+  <Rodadas>
+    <Rodada>
+      <id>1</id>
+      <idJogadorArtilheiro>5</idJogadorArtilheiro>
+      <totalJogos>20</totalJogos>
+      <totalAmarelos>10</totalAmarelos>
+      <totalVermelhos>1</totalVermelhos>
+      <totalGols>50</totalGols>
+      <ClassificacoesRodada>
+        <ClassificacaoRodada>
+          <id>1</id>
+          <idClube>1</idClube>
+          <posicao>1</posicao>
+        </ClassificacaoRodada>
+        <ClassificacaoRodada>
+          <id>1</id>
+          <idClube>2</idClube>
+          <posicao>2</posicao>
+        </ClassificacaoRodada>
+        <ClassificacaoRodada>
+          <id>3</id>
+          <idClube>3</idClube>
+          <posicao>5</posicao>
+        </ClassificacaoRodada>
+        <ClassificacaoRodada>
+          <id>4</id>
+          <idClube>4</idClube>
+          <posicao>10</posicao>
+        </ClassificacaoRodada>
+      </ClassificacoesRodada>
+    </Rodada>
+  </Rodadas>
+  
+</Campeonato>
