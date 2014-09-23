@@ -21,7 +21,7 @@
                         <xs:sequence>
                             <xs:element name="id" type="xs:integer"/>
                             <xs:element name="nome" type="xs:string"/>
-                            <xs:element name="marca" type="xs:integer"/>
+                            <xs:element name="idMarca" type="xs:integer"/> 
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
@@ -38,7 +38,8 @@
         <!-- Para validar como atributo (o exemplo está para elementos), deve ser colocado @. Ex.: <xs:field xpath="@marca"/> -->
         <xs:keyref name="carroKeyRef" refer="marcaKey">
             <xs:selector xpath="carro"/>
-            <xs:field xpath="marca"/>
-        </xs:keyref>
+            <xs:field xpath="idMarca"/>
+        </xs:keyref> 
+        
     </xs:element>
 </xs:schema>

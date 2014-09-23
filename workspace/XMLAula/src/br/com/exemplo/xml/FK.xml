@@ -15,16 +15,23 @@
     <carro>
         <id>1</id>
         <nome>Mustang</nome>
-        <marca>2</marca>
+        <idMarca>2</idMarca>
     </carro>
     <carro>
         <id>2</id>
         <nome>Camaro</nome>
-        <marca>2</marca>
+        <idMarca>2</idMarca>
     </carro>
     <carro>
         <id>3</id>
         <nome>BMW X1</nome>
-        <marca>2</marca>
+        <idMarca>2</idMarca>
     </carro>
+    
+    <carro>
+        <id>4</id>
+        <nome>Carro bom</nome>
+        <idMarca>2</idMarca>
+    </carro>
+    
 </CadastroCarros>
