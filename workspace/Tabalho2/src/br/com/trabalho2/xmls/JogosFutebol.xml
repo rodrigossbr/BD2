@@ -54,7 +54,7 @@
 		<id>1</id>
 		<nome>Jogador 1</nome>
 		<posicoes>
-			<idPosicao>1</idPosicao>
+			<idPosicao>3</idPosicao>
 		</posicoes>
 	</Jogador>
 	<Jogador>
