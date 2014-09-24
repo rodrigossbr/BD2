@@ -31,7 +31,17 @@
         	<property name="hibernate.max_fetch_depth" value="2" />
 	        <property name="hibernate.show_sql" value="true" />
         	<property name="hibernate.hbm2ddl.auto" value="create"/>
-		</properties>   
+		</properties>  
+		
+		<!--<properties>
+            <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/BD2" />
+            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />
+            <property name="hibernate.connection.password" value="bd2" />
+            <property name="hibernate.connection.username" value="bd2" />
+        	<property name="hibernate.max_fetch_depth" value="2" />
+	        <property name="hibernate.show_sql" value="true" />
+        	<property name="hibernate.hbm2ddl.auto" value="create"/>
+		</properties>--> 
 	</persistence-unit>
 </persistence>
 
