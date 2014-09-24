@@ -1,9 +1,0 @@
-package br.com.bd2.model;
-
-public class Rodada {
-	private int idRodada;
-	private int idCampeonato;
-	private int idArtilheiro;
-	
-	
-}

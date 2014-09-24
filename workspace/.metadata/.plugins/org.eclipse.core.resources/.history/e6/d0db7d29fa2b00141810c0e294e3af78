@@ -1,7 +1,0 @@
-package br.com.bd2.model;
-
-public class Posicao {
-	private int idPosicao;
-	private String nome;
-	
-}
