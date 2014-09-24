@@ -44,6 +44,12 @@ public class Campeonato {
 		this.nome = nome;
 	}
 	
+	public Campeonato(String nome, int ano, int nroClubes){
+		this.nome = nome;
+		this.ano = ano;
+		this.nroClubes = nroClubes;
+	}
+	
 	public long getIdCampeonato() {
 		return idCampeonato;
 	}

@@ -1,7 +1,10 @@
 package br.com.bd2.main;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 import com.db4o.Db4oEmbedded;
 import com.db4o.ObjectContainer;
@@ -13,100 +16,106 @@ public class MainDB4Objects {
 
 	public static void main(String[] args) {
 		
-		Posicao posicao1 = new Posicao("Posicao 1");
-		Posicao posicao2 = new Posicao("Posicao 2");
-		Posicao posicao3 = new Posicao("Posicao 3");
-		Posicao posicao4 = new Posicao("Posicao 4");
+//		Objetos comuns
 		
-		Clube clube1 = new Clube("Clube 1");
+		Posicao posGoleiro = new Posicao("Goleiro");
+		Posicao posZagueiro = new Posicao("Zagueiro");
+		Posicao posLateral = new Posicao("Lateral");
+		Posicao posVolante = new Posicao("Volante");
+		Posicao posMeia = new Posicao("Meia");
+		Posicao posAtacante = new Posicao("Atacante");
 		
-		ArrayList<Clube> clubes = new ArrayList<Clube>();
-		clubes.add(clube1);
+		Patrocinador patNike = new Patrocinador("Nike");
+		Patrocinador patTopper = new Patrocinador("Topper");
 		
-		ArrayList<Tecnico> tecnicos = new ArrayList<Tecnico>();
-		Tecnico tecnico1 = new Tecnico("Tecnico 1");
-		tecnicos.add(tecnico1);
-		clube1.setTecnicos(tecnicos);
+//		Grêmio
 		
-		ArrayList<Diretor> diretores = new ArrayList<Diretor>();
-		Diretor diretor1 = new Diretor("Diretor 1");
-		diretor1.setClubes(clubes);
-		diretores.add(diretor1);
-		clube1.setDiretores(diretores);
+		Diretor dirKoff = new Diretor("Koff");
+		Tecnico tecFelipao = new Tecnico("Felipão");
+		TorcidaOrganizada torcGeral = new TorcidaOrganizada("Geral");
 		
-		ArrayList<Patrocinador> patrocinadores = new ArrayList<Patrocinador>();
-		Patrocinador patrocinador1 = new Patrocinador("Patrocinador 1");
-		patrocinador1.setClubes(clubes);
-		patrocinadores.add(patrocinador1);
-		clube1.setPatrocinadores(patrocinadores);
+		ArrayList<Jogador> jogadoresGremio = new ArrayList<Jogador>();
 		
-		ArrayList<TorcidaOrganizada> torcidas = new ArrayList<TorcidaOrganizada>();
-		TorcidaOrganizada torcida1 = new TorcidaOrganizada("Torcida 1");
-		torcida1.setClube(clube1);
-		torcidas.add(torcida1);
-		clube1.setTorcidaOrganizada(torcidas);
-
-		ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
-		Jogador jogador1 = new Jogador("Jogador 1");
-		jogador1.setPosicao(posicao1);
-		jogador1.setClube(clube1);
-		jogadores.add(jogador1);
-		Jogador jogador2 = new Jogador("Jogador 2");
-		jogador2.setPosicao(posicao2);
-		jogador2.setClube(clube1);
-		jogadores.add(jogador2);
-		Jogador jogador3 = new Jogador("Jogador 3");
-		jogador3.setPosicao(posicao3);
-		jogador3.setClube(clube1);
-		jogadores.add(jogador3);
-		Jogador jogador4 = new Jogador("Jogador 4");
-		jogador4.setPosicao(posicao4);
-		jogador4.setClube(clube1);
-		jogadores.add(jogador4);
-		clube1.setJogadores(jogadores);
+		Jogador jogMarceloGrohe = new Jogador("Marcelo Grohe");
+		jogMarceloGrohe.setPosicao(posGoleiro);
 		
-		Jogo jogo1 = new Jogo();
+		jogadoresGremio.add(jogMarceloGrohe);
 		
-		ArrayList<ClubeJogo> clubeJogos = new ArrayList<ClubeJogo>();
-		ClubeJogo clubeJogo1 = new ClubeJogo();
-		clubeJogo1.setClube(clube1);
-		clubeJogo1.setGols(6);
-		clubeJogo1.setPontos(40);
-		clubeJogo1.setCartaoVermelho(0);
-		clubeJogo1.setCartaoAmarelo(2);
-		clubeJogo1.setJogo(jogo1);
-		clubeJogos.add(clubeJogo1);
-		clube1.setClubesJogo(clubeJogos);
+		Clube clubeGremio = new Clube("Grêmio");
+		clubeGremio.addTecnico(tecFelipao);
+		clubeGremio.addPatrocinador(patTopper);
+		clubeGremio.addTorcidaOrganizada(torcGeral);
+		clubeGremio.addDiretor(dirKoff);
+		clubeGremio.setJogadores(jogadoresGremio);
 		
-		Campeonato campeonato = new Campeonato("Campeonato 1");
-		campeonato.setAno(2014);
-		campeonato.setNroClubes(2);
+//		Inter
 		
-		ClassificacaoGeral classificacaoGeral = new ClassificacaoGeral();
-		classificacaoGeral.setCampeonato(campeonato);
-		classificacaoGeral.setClube(clube1);
-		classificacaoGeral.setPosicao(1);
+		Diretor dirLuigi = new Diretor("Luigi");
+		Tecnico tecAbelao = new Tecnico("Abelão");
+		TorcidaOrganizada torcMacacada = new TorcidaOrganizada("Macacada");
 		
-		ClassificacaoRodada classificacaoRodada = new ClassificacaoRodada();
-		classificacaoRodada.setClube(clube1);
-		classificacaoRodada.setPosicao(1);
+		ArrayList<Jogador> jogadoresInter = new ArrayList<Jogador>();
 		
+		Jogador jogDida = new Jogador("Dida");
+		jogDida.setPosicao(posGoleiro);
+		
+		jogadoresInter.add(jogDida);
+		
+		Clube clubeInter = new Clube("Internacional");
+		clubeInter.addTecnico(tecAbelao);
+		clubeInter.addPatrocinador(patNike);
+		clubeInter.addTorcidaOrganizada(torcMacacada);
+		clubeInter.addDiretor(dirLuigi);
+		clubeInter.setJogadores(jogadoresInter);
+		
+//		Campeonato
+		
+		Campeonato campBrasileiro = new Campeonato("Brasileirão");
 		ArrayList<Rodada> rodadas = new ArrayList<Rodada>();
-		Rodada rodada1 = new Rodada();
-		rodada1.setArtilheiro(jogador1);
 		
-		ArrayList<Jogo> jogos = new ArrayList<Jogo>();
-		jogos.add(jogo1);
-		rodada1.setJogos(jogos);
-		rodada1.setCampeonato(campeonato);
+//		Rodada 1
+		
+		Rodada rodada1 = new Rodada();
+		
+		Jogo jogoGreInt = new Jogo();
+		ClubeJogo clbJogoGreInt1 = new ClubeJogo();
+		clbJogoGreInt1.setClube(clubeGremio);
+		ClubeJogo clbJogoGreInt2 = new ClubeJogo();
+		clbJogoGreInt2.setClube(clubeInter);
+		jogoGreInt.addJogoClube(clbJogoGreInt1);
+		jogoGreInt.addJogoClube(clbJogoGreInt2);
+		rodada1.addJogo(jogoGreInt);
+		
 		rodadas.add(rodada1);
 		
-		classificacaoRodada.setRodada(rodada1);
-		campeonato.setRodadas(rodadas);
+//		Rodada 2
+		
+		Rodada rodada2 = new Rodada();
+		
+		Jogo jogoIntGre = new Jogo();
+		ClubeJogo clbJogoIntGre1 = new ClubeJogo();
+		clbJogoIntGre1.setClube(clubeGremio);
+		ClubeJogo clbJogoIntGre2 = new ClubeJogo();
+		clbJogoIntGre2.setClube(clubeInter);
+		jogoIntGre.addJogoClube(clbJogoIntGre1);
+		jogoIntGre.addJogoClube(clbJogoIntGre2);
+		rodada2.addJogo(jogoIntGre);
+		
+		rodadas.add(rodada2);
+		
+		ClassificacaoRodada clfRodada1Gre = new ClassificacaoRodada();
+		clfRodada1Gre.setRodada(rodada1);
+		clfRodada1Gre.setClube(clubeGremio);
+		
+		ClassificacaoRodada clfRodada1Int = new ClassificacaoRodada();
+		clfRodada1Int.setRodada(rodada1);
+		clfRodada1Int.setClube(clubeInter);
+		
+		campBrasileiro.setRodadas(rodadas);
 		
 		ObjectContainer db = Db4oEmbedded.openFile(Db4oEmbedded.newConfiguration(), "BD2OO");
 		try {
-		    db.store(campeonato);
+		    db.store(campBrasileiro);
 		    
 		    ObjectSet<?> resultado = db.queryByExample(Campeonato.class);
 		    imprimirResultado(resultado);

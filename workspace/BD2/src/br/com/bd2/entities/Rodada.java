@@ -2,7 +2,9 @@ package br.com.bd2.entities;
 
 import static javax.persistence.GenerationType.SEQUENCE;
 
+import java.util.ArrayList;
 import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -38,7 +40,7 @@ public class Rodada {
 	private long totalGols;
 	
 	public Rodada() {
-		// TODO Auto-generated constructor stub
+		jogos = new ArrayList<Jogo>();
 	}
 	
 	public long getIdRodada() {
@@ -103,5 +105,9 @@ public class Rodada {
 	
 	public void setTotalGols(long totalGols) {
 		this.totalGols = totalGols;
+	}
+	
+	public void addJogo(Jogo jogo){
+		this.jogos.add(jogo);
 	}
 }

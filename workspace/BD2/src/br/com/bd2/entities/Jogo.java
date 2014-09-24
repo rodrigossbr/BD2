@@ -2,6 +2,7 @@ package br.com.bd2.entities;
 
 import static javax.persistence.GenerationType.SEQUENCE;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -30,7 +31,7 @@ public class Jogo {
 	private Rodada rodada;
 	
 	public Jogo() {
-		// TODO Auto-generated constructor stub
+		jogosClube = new ArrayList<ClubeJogo>();
 	}
 	
 	public long getIdJogo() {
@@ -54,5 +55,9 @@ public class Jogo {
 
 	public void setJogosClube(List<ClubeJogo> jogosClube) {
 		this.jogosClube = jogosClube;
+	}
+	
+	public void addJogoClube(ClubeJogo clubeJogo){
+		this.jogosClube.add(clubeJogo);
 	}
 }

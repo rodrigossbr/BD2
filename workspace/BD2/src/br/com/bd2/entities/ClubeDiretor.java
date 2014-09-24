@@ -18,7 +18,7 @@ public class ClubeDiretor {
 	private Diretor diretor;
 	
 	@ManyToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="idCLube")
+	@JoinColumn(name="idClube")
 	private Clube clube;
 	
 	public ClubeDiretor() {

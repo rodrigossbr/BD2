@@ -2,6 +2,7 @@ package br.com.bd2.entities;
 
 import static javax.persistence.GenerationType.SEQUENCE;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -64,10 +65,18 @@ public class Clube {
 	private List<ClassificacaoRodada> classificacaoRodada;
 	
 	public Clube() {
-		// TODO Auto-generated constructor stub
+		jogadores = new ArrayList<Jogador>();
+		clubesJogo = new ArrayList<ClubeJogo>();
+		diretores = new ArrayList<Diretor>();
+		patrocinadores = new ArrayList<Patrocinador>();
+		tecnicos = new ArrayList<Tecnico>();
+		torcidaOrganizada = new ArrayList<TorcidaOrganizada>();
+		classificacaoGeral = new ArrayList<ClassificacaoGeral>();
+		classificacaoRodada = new ArrayList<ClassificacaoRodada>(); 
 	}
 	
 	public Clube(String nome) {
+		this();
 		this.nome = nome;
 	}
 	
@@ -153,5 +162,21 @@ public class Clube {
 	
 	public void addJogador(Jogador jogador){
 		this.jogadores.add(jogador);
+	}
+	
+	public void addTecnico(Tecnico tecnico){
+		this.tecnicos.add(tecnico);
+	}
+	
+	public void addTorcidaOrganizada(TorcidaOrganizada torcidaOrganizada){
+		this.torcidaOrganizada.add(torcidaOrganizada);
+	}
+	
+	public void addPatrocinador(Patrocinador patrocinador){
+		this.patrocinadores.add(patrocinador);
+	}
+	
+	public void addDiretor(Diretor diretor){
+		this.diretores.add(diretor);
 	}
 }
