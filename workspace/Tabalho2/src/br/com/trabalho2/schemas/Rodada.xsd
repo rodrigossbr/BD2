@@ -2,23 +2,30 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:include schemaLocation="ClassificacaoRodada.xsd"/>
     <xs:include schemaLocation="Jogo.xsd"/>
+    
    	<xs:element name="Rodada">
    		<xs:complexType>
              <xs:sequence>
                 <xs:element name="id" type="xs:integer"/>
-                <xs:element name="idJogadorArtilheiro" type="xs:integer"/>
                 <xs:element name="totalJogos" type="xs:integer"/>
                 <xs:element name="totalAmarelos" type="xs:integer"/>
                 <xs:element name="totalVermelhos" type="xs:integer"/>
                 <xs:element name="totalGols" type="xs:integer"/>
-                <xs:element name="Jogos" minOccurs="0">
+                <xs:element name="jogadorArtilheiro" minOccurs="1" maxOccurs="1">
 				    <xs:complexType>
 				        <xs:sequence> 
-				            <xs:element ref="Jogo" minOccurs="0" maxOccurs="unbounded"/>
+				            <xs:element ref="Jogador" maxOccurs="1"/>
 				        </xs:sequence>
 				    </xs:complexType> 
 				</xs:element>
-				<xs:element name="ClassificacoesRodada" minOccurs="0">
+                <xs:element name="Jogos" minOccurs="1" maxOccurs="1">
+				    <xs:complexType>
+				        <xs:sequence> 
+				            <xs:element ref="Jogo" minOccurs="1" maxOccurs="unbounded"/>
+				        </xs:sequence>
+				    </xs:complexType> 
+				</xs:element>
+				<xs:element name="ClassificacoesRodada" minOccurs="1" maxOccurs="1">
 				    <xs:complexType>
 				        <xs:sequence> 
 				            <xs:element ref="ClassificacaoRodada" minOccurs="1" maxOccurs="unbounded"/>
@@ -27,9 +34,5 @@
 				</xs:element>
              </xs:sequence>
         </xs:complexType>
-       	<xs:key name="rodadaKey">
-	    	<xs:selector xpath="Rodata"/>
-	        <xs:field xpath="id"/>
-	    </xs:key>
    	</xs:element>
 </xs:schema>

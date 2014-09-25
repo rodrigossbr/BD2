@@ -7,9 +7,5 @@
                 <xs:element name="nome" type="xs:string"/>
             </xs:sequence>
         </xs:complexType>
-        <xs:key name="torcidaOrganizadaKey">
-            <xs:selector xpath="TorcidaOrganizada"/>
-            <xs:field xpath="id"/>
-        </xs:key>
     </xs:element>
 </xs:schema>

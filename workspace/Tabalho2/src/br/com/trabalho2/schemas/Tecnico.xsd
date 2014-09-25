@@ -7,9 +7,5 @@
                 <xs:element name="nome" type="xs:string"/>
             </xs:sequence>
         </xs:complexType>
-        <xs:key name="tecnicoKey">
-            <xs:selector xpath="Tecnico"/>
-            <xs:field xpath="id"/>
-        </xs:key>
     </xs:element>
 </xs:schema>

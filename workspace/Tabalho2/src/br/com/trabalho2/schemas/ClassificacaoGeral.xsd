@@ -7,13 +7,9 @@
     	<xs:complexType>
         	<xs:sequence>
             	<xs:element name="id" type="xs:integer"/>
-                <xs:element name="idClube" type="xs:integer"/>
                 <xs:element name="posicao" type="xs:integer"/>
+                <xs:element name="idClube" type="xs:integer"/>
             </xs:sequence>
         </xs:complexType>
-		<xs:key name="classificacaoGeralKey">
-	         <xs:selector xpath="ClassificacaoGeral"/>
-	         <xs:field xpath="id"/>
-	    </xs:key>
     </xs:element>
 </xs:schema>

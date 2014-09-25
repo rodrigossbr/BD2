@@ -10,46 +10,42 @@
         	<xs:sequence>
 	            <xs:element name="id" type="xs:integer"/>
 	            <xs:element name="nome" type="xs:string"/>
-	            <xs:element name="jogadores" maxOccurs="16">
+	            <xs:element name="diretores" minOccurs="1" maxOccurs="1">
    					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="idJogador" type="xs:integer" maxOccurs="16"/>
+							<xs:element ref="Diretor" minOccurs="1" maxOccurs="unbounded"/>
 						</xs:sequence>        			
 	    			</xs:complexType>
 	            </xs:element>
-	            <xs:element name="diretores">
+             	<xs:element name="tecnicos" minOccurs="1" maxOccurs="1">
    					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="idDiretor" type="xs:integer" maxOccurs="unbounded"/>
+							<xs:element ref="Tecnico" minOccurs="1" maxOccurs="unbounded"/>
 						</xs:sequence>        			
 	    			</xs:complexType>
 	            </xs:element>
-             	<xs:element name="tecnicos">
+	            <xs:element name="patrocinadores" maxOccurs="1">
    					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="idTecnico" type="xs:integer" maxOccurs="unbounded"/>
+							<xs:element ref="Patrocinador" minOccurs="0" maxOccurs="unbounded"/>
 						</xs:sequence>        			
 	    			</xs:complexType>
 	            </xs:element>
-	            <xs:element name="patrocinadores">
+	            <xs:element name="torcidasOrganizadas" maxOccurs="1">
    					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="idPatrocinador" type="xs:integer" maxOccurs="unbounded"/>
+							<xs:element ref="TorcidaOrganizada" minOccurs="0" maxOccurs="unbounded"/>
 						</xs:sequence>        			
 	    			</xs:complexType>
 	            </xs:element>
-	            <xs:element name="torcidasOrganizadas">
+	            <xs:element name="jogadores" minOccurs="1" maxOccurs="1">
    					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="idTorcidaOrganizada" type="xs:integer" maxOccurs="unbounded"/>
+							<xs:element ref="Jogador" maxOccurs="16"/>
 						</xs:sequence>        			
 	    			</xs:complexType>
 	            </xs:element>
             </xs:sequence>
        	</xs:complexType>
-       	<xs:key name="clubeKey">
-	         <xs:selector xpath="Clube"/>
-	         <xs:field xpath="id"/>
-	    </xs:key>
      </xs:element>
 </xs:schema>
